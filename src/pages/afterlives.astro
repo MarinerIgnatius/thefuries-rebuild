@@ -1,60 +1,144 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 
-const title = 'Afterlives. Lineage & Legacy | The Furies Archive';
-const description = 'From the dissolution of The Furies came a series of new trajectories — parallel projects and sonic departures that carried the band\'s original friction into new spaces. 1996 and beyond.';
+const title = 'Afterlives: Millionaires, Sylvania, Fleurs Du Mal | The Furies Archive';
+const description = 'Discover Toronto\'s proto-goth legacy beyond The Furies. Sylvania, Millionaires, Fleurs Du Mal — collaborations with Mars Roberge, Rob Sanzo, Steve Leckie, Jennifer Swain. Post-1996 lineage.';
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/images/band_web_2.jpg"
+>
 
-  <!-- ── Hero ──────────────────────────────────────────────────── -->
-  <section class="hero" style="min-height:300px;" aria-labelledby="afterlives-heading">
+  <!-- ── Hero ─────────────────────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="hero-heading">
     <img
       class="hero__bg"
-      src="/images/afterlives-hero.jpg"
-      alt="The Furies — afterlives, lineage and legacy"
+      src="/images/band_web_2.jpg"
+      alt="The Furies — afterlives, Toronto darkwave lineage post-1996"
       loading="eager"
+      fetchpriority="high"
+      decoding="async"
     />
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="container hero__content">
-      <p class="hero__eyebrow">Post-1996</p>
-      <h1 class="hero__title" id="afterlives-heading">
-        AFTERLIVES.<br />LINEAGE &amp; LEGACY
+      <h1 class="hero__eyebrow" id="hero-heading">
+        Afterlives: Millionaires, Sylvania, Collaborations with Mars Roberge, Rob Sanzo, Steve Leckie, Jennifer Swain
       </h1>
-      <p class="hero__subtitle">
-        The decade didn't simply end; it fractured.
-      </p>
+      <p class="hero__display">Afterlives. Transmission. Transition.</p>
     </div>
   </section>
 
-  <!-- ── Intro ─────────────────────────────────────────────────── -->
-  <section class="section">
+  <!-- ── Intro ──────────────────────────────────────────────────── -->
+  <section class="section" aria-labelledby="intro-heading">
     <div class="container">
-      <span class="section-label">After 1996</span>
-      <div class="prose" style="max-width:75ch;">
-        <p style="font-size:1.05rem; color:var(--light);">
-          From the dissolution of the core lineup came a series of new trajectories
-          — parallel projects and sonic departures that carried the band's original
-          friction into new spaces. These are the offshoots of the 1986–1996 run:
-          the next movements for those who were there.
+      <h1 class="section-eyebrow reveal">Post-1996</h1>
+      <div class="reveal" style="max-width: 65ch;">
+        <h2 id="intro-heading">The decade didn't simply end; it fractured.</h2>
+        <p style="margin-top: 2rem;">
+          From the dissolution of the core lineup came a series of new trajectories — parallel projects and sonic departures that carried the band's original friction into new spaces. These are the offshoots of the 1986–1996 run: the next movements for those who were there.
         </p>
-      </div>
-
-      <!-- Full Afterlives content re-pulled from live site during rebuild -->
-      <div class="placeholder-notice" style="margin-top:3rem;">
-        Full Afterlives content — re-pull from thefuries1986.com/afterlives during rebuild.<br />
-        <span style="font-size:0.65rem; opacity:0.6; letter-spacing:0; text-transform:none;">
-          Do not cancel Wix until this page is populated.
-        </span>
       </div>
     </div>
   </section>
 
   <hr />
 
-  <!-- ── Nav CTA ───────────────────────────────────────────────── -->
-  <section class="section section--tight">
-    <div class="container" style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+  <!-- ── Sylvania ───────────────────────────────────────────────── -->
+  <section class="section section--raised" aria-labelledby="sylvania-heading">
+    <div class="container">
+      <h1 class="section-eyebrow reveal">Lineage</h1>
+      <div class="split split--text-left reveal">
+        <div class="split__text">
+          <h2 id="sylvania-heading">Sylvania</h2>
+          <p style="margin-top: 2rem;">
+            Toronto darkwave project carrying forward The Furies' atmospheric instincts into the late-90s and early 2000s. Cold-synth architecture refined from the band's original sonic skeleton. Live residencies across the post-Furies shadow circuit.
+          </p>
+        </div>
+        <div class="split__media">
+          <div class="media-panel">
+            <img
+              src="/images/Sylvania_Band_Darkwave_Toronto.jpg"
+              alt="Sylvania — Toronto darkwave project, post-Furies lineage"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Millionaires ──────────────────────────────────────────── -->
+  <section class="section" aria-labelledby="millionaires-heading">
+    <div class="container">
+      <div class="split reveal">
+        <div class="split__text">
+          <h2 id="millionaires-heading">Millionaires</h2>
+          <p style="margin-top: 2rem;">
+            Collaborations with Mars Roberge, Rob Sanzo, Steve Leckie. A harder, scrappier vehicle that retained the underground instinct while shifting tonally. Documented performances at The Rivoli, Bovine Sex Club, and the late-era Queen West rooms.
+          </p>
+        </div>
+        <div class="split__media">
+          <div class="media-panel">
+            <img
+              src="/images/the_millionaires_Toronto_Band.jpg"
+              alt="The Millionaires — Toronto band, post-Furies collaboration"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Fleurs Du Mal ─────────────────────────────────────────── -->
+  <section class="section section--raised" aria-labelledby="fdm-heading">
+    <div class="container">
+      <div class="split split--text-left reveal">
+        <div class="split__text">
+          <h2 id="fdm-heading">Fleurs Du Mal</h2>
+          <p style="margin-top: 2rem;">
+            Collaborations with Jennifer Swain. Baudelairean in naming and in instinct — blackened romanticism translated into sound. The most recent extension of the Furies lineage.
+          </p>
+        </div>
+        <div class="split__media">
+          <div class="media-panel">
+            <img
+              src="/images/FDM669.jpg"
+              alt="Fleurs Du Mal — Toronto darkwave, Furies lineage"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Legacy pullquote ───────────────────────────────────────── -->
+  <section class="section" aria-labelledby="legacy-heading">
+    <div class="container pull-quote reveal">
+      <p class="pull-quote__text" id="legacy-heading">
+        A Staple of the Goth Nightclub Circuit.
+      </p>
+      <cite class="pull-quote__attribution">BlogTO · Top 10 Toronto Goth Bands of All Time</cite>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Next ────────────────────────────────────────────────────── -->
+  <section class="section" aria-label="Continue">
+    <div class="container" style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
       <a href="/media" class="btn btn--accent">← Archive Media</a>
       <a href="/connect" class="btn btn--accent">Connect →</a>
     </div>

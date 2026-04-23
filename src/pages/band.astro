@@ -9,126 +9,116 @@ const timeline = [
     period: '1984–1986',
     heading: 'The Origins',
     body: `Before The Furies existed as a band, the sound existed as an instinct. Between 1984 and 1986, Daniel Riley worked alone — a Tascam 4-track, a Yamaha DX7 cutting cold crystalline tones and metallic bass, a Roland Juno-106 delivering its icy atmospheric haze. Guitars, voice and synths run through Boss phase, distortion and digital delay. Raw, atmospheric tension — a sonic skeleton waiting for a body.`,
-    aside: 'Listening diet: Gary Numan, Psychic TV, Fad Gadget, Cabaret Voltaire, Tones on Tail.',
   },
   {
     period: '1986',
     heading: 'Formation',
-    body: `The definitive lineup coalesced in 1986 — Riley, Mark Stewart, Jeff Riley, Barnes, and soon after Steve Lafourtune. What emerged was cold, brooding, and deliberately aggressive: jagged guitar rhythms over synthetic atmospherics, a sonic signature that would soon map Toronto's gothic trajectory. The basement experiments became a live force.`,
-    aside: null,
+    body: `The definitive lineup coalesced in 1986 — Riley, Mark Stewart, Jeff Riley, Barnes, and soon after Steve Lafourtune. What emerged was cold, brooding, and deliberately aggressive: jagged guitar rhythms over synthetic atmospherics, a sonic signature that would soon map Toronto's gothic trajectory.`,
   },
   {
     period: '1986',
     heading: 'Twilight Zone Debut',
     body: `The debut at the Twilight Zone — 185 Richmond St. W., home to one of the most advanced sound systems in the city — was a statement. The 80s club kids packed the floor in a lysergic haze, not unlike a pagan ceremony. A high-profile emergence that cemented The Furies immediately in Toronto's alternative history.`,
-    aside: null,
   },
   {
     period: '1986–1996',
     heading: 'Active Years & Venues',
     body: `What followed was a decade of constant presence inside Little Gotham — the city's infamous subterranean world that rivalled London and Berlin. Lee's Palace, El Mocambo, The Rivoli, the Bovine Sex Club. They haunted Sanctuary, Catch 22, Death in the Underground — the concentrated cluster of venues on Queen West that earned the street its nickname. Packed rooms, every time.`,
-    aside: null,
   },
   {
     period: 'The Principle',
     heading: 'Industry and Principle',
     body: `Approaches came from EMI and Warner. The band declined both. In a subculture that wore independence as a badge of honour, signing to a major wasn't ambition — it was capitulation. The Furies kept the work pure.`,
-    aside: null,
   },
   {
     period: 'Legacy',
     heading: 'The Lasting Legacy',
     body: `BlogTO named them one of the top 10 Toronto goth bands of all time — "essential to fostering the goth movement and setting the tone for style." Cited in the Wikipedia history of Toronto's alternative scene. Documented by indie press, and the early MuchMusic–CityTV cultural machine. A decade-long reign. Uncompromised throughout.`,
-    aside: null,
   },
 ];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/images/The_Furies+Alt_Underground_Toronto.jpg"
+>
 
-  <!-- ── Hero ──────────────────────────────────────────────────── -->
-  <section class="hero" aria-labelledby="band-heading">
+  <!-- ── Hero ─────────────────────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="hero-heading">
     <img
       class="hero__bg"
-      src="/images/band-hero.jpg"
-      alt="The Furies — Toronto, 1986–1996"
+      src="/images/The_Furies+Alt_Underground_Toronto.jpg"
+      alt="The Furies — Toronto alternative underground, 1986–1996"
       loading="eager"
+      fetchpriority="high"
+      decoding="async"
     />
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="container hero__content">
-      <p class="hero__eyebrow">The Band</p>
-      <h1 class="hero__title" id="band-heading">
-        BAND: THE FURIES —<br />
-        ORIGINS, FORMATION,<br />
-        DEBUT, ACTIVE YEARS<br />
-        AND LEGACY
+      <h1 class="hero__eyebrow" id="hero-heading">
+        Band: The Furies — Origins, Formation, Debut, Active Years and Legacy
       </h1>
-      <p class="hero__subtitle">
-        Toronto post-punk / proto-goth, 1986–1996.<br />The defining years.
+      <p class="hero__display">
+        Toronto Post-Punk / Proto-Goth, 1986–1996. The Defining Years.
       </p>
     </div>
   </section>
 
-  <!-- ── Hero intro ───────────────────────────────────────────── -->
-  <section class="section section--tight">
-    <div class="container">
-      <div class="prose">
-        <p style="font-size:1.1rem; color:var(--light);">
-          The Furies emerged in Toronto in 1986, less as a debut than as a
-          convergence with the city's darkening pulse. Post-punk tension, nocturnal
-          glamour, and underground appetite were beginning to lock into a new shape,
-          and The Furies arrived exactly at that hour.
-        </p>
-        <p>
-          What followed was the band's defining decade: 1986 to 1996, when the sound
-          cut deeper, the image grew sharper, and the live presence took on its own
-          dangerous silhouette. This was the era of the foundational strike — where
-          sound, shadow, and live volatility were engineered into a permanent legacy.
-        </p>
-      </div>
+  <!-- ── Opening pullquote ──────────────────────────────────────── -->
+  <section class="section" aria-labelledby="opening-heading">
+    <div class="container pull-quote reveal">
+      <p class="pull-quote__text" id="opening-heading">
+        They started very late for a Wednesday night…
+      </p>
+      <cite class="pull-quote__attribution">NOW Magazine — early live review</cite>
+    </div>
+  </section>
 
-      <!-- Pull quote -->
-      <div class="pull-quote" style="margin-top:2.5rem;">
-        <p class="pull-quote__text">
-          "They started very late for a Wednesday night… They were told never to
-          return: The bassist slugged the soundman."
-        </p>
-        <cite class="pull-quote__attribution">— NOW Magazine, Blue Smith</cite>
+  <hr />
+
+  <!-- ── Opening narrative ──────────────────────────────────────── -->
+  <section class="section section--raised" aria-labelledby="emerge-heading">
+    <div class="container">
+      <h1 class="section-eyebrow reveal">Emergence</h1>
+      <div class="split reveal">
+        <div class="split__text">
+          <h2 id="emerge-heading">The Furies emerged at the hour Toronto's pulse began to darken.</h2>
+          <p style="margin-top: 2rem;">
+            Post-punk tension, nocturnal glamour, and underground appetite were beginning to lock into a new shape, and The Furies arrived exactly at that hour. What followed was the band's defining decade: 1986 to 1996, when the sound cut deeper, the image grew sharper, and the live presence took on its own dangerous silhouette. The era of the foundational strike — where sound, shadow, and live volatility were engineered into a permanent legacy.
+          </p>
+        </div>
+        <div class="split__media">
+          <div class="media-panel">
+            <img
+              src="/images/the-furies-Toronto-proto-goth-underground_80s.jpg"
+              alt="The Furies performing — Toronto, 1980s archive photograph"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <hr />
 
-  <!-- ── Timeline ──────────────────────────────────────────────── -->
+  <!-- ── Timeline ───────────────────────────────────────────────── -->
   <section class="section" aria-labelledby="history-heading">
     <div class="container">
-      <span class="section-label">The Long Decline</span>
-      <h2 id="history-heading" style="margin-bottom:3rem;">
-        A History 1986–1996
-      </h2>
+      <h1 class="section-eyebrow reveal">The Long Decline</h1>
+      <h2 id="history-heading" class="reveal" style="margin-bottom: 3rem;">A History 1986–1996</h2>
 
-      <div style="display:flex; flex-direction:column; gap:0; border:1px solid var(--border);">
-        {timeline.map(({ period, heading, body, aside }, i) => (
-          <div style={`
-            padding: 2rem clamp(1.25rem,3vw,2.5rem);
-            border-bottom: ${i < timeline.length - 1 ? '1px solid var(--border)' : 'none'};
-            display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 2rem;
-            align-items: start;
-          `}>
+      <div class="reveal">
+        {timeline.map(({ period, heading, body }) => (
+          <div class="entry-row">
             <div>
-              <span class="text-mono" style="color:var(--accent); font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase;">
-                {period}
-              </span>
+              <span class="mono" style="color: var(--color-accent); font-size: 0.85rem;">{period}</span>
+              <div class="entry-row__name" style="margin-top: 0.5rem;">{heading}</div>
             </div>
-            <div class="prose">
-              <h3 style="margin-top:0; color:var(--white);">{heading}</h3>
+            <div>
               <p>{body}</p>
-              {aside && (
-                <p class="text-faded" style="font-size:0.85rem; font-style:italic;">{aside}</p>
-              )}
             </div>
           </div>
         ))}
@@ -138,25 +128,21 @@ const timeline = [
 
   <hr />
 
-  <!-- ── Band images ───────────────────────────────────────────── -->
-  <section class="section section--tight" aria-label="Band photos">
-    <div class="container">
-      <span class="section-label">From the Archive</span>
-      <div class="image-strip" style="margin-top:1.5rem;">
-        <!-- Populated from assets/ after download-assets.sh is run -->
-        <!-- Add actual image filenames here, referencing /images/filename.jpg -->
-        <div class="placeholder-notice" style="grid-column:1/-1;">
-          Images load here — run download-assets.sh first, then copy to public/images/
-        </div>
-      </div>
+  <!-- ── Legacy pullquote ───────────────────────────────────────── -->
+  <section class="section section--raised" aria-labelledby="legacy-heading">
+    <div class="container pull-quote reveal">
+      <p class="pull-quote__text" id="legacy-heading">
+        A Staple of the Goth Nightclub Circuit.
+      </p>
+      <cite class="pull-quote__attribution">BlogTO · Top 10 Toronto Goth Bands of All Time</cite>
     </div>
   </section>
 
   <hr />
 
-  <!-- ── Nav CTA ───────────────────────────────────────────────── -->
-  <section class="section section--tight">
-    <div class="container" style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+  <!-- ── Next ────────────────────────────────────────────────────── -->
+  <section class="section" aria-label="Continue">
+    <div class="container" style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
       <a href="/scene" class="btn btn--accent">The Scene →</a>
       <a href="/media" class="btn btn--accent">Archive Media →</a>
       <a href="/afterlives" class="btn btn--accent">Afterlives →</a>

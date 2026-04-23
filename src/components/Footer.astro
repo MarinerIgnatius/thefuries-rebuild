@@ -4,8 +4,18 @@ const year = new Date().getFullYear();
 
 <footer class="site-footer">
   <div class="container site-footer__inner">
+    <a href="/" class="site-footer__brand" aria-label="The Furies Archive — home">
+      <img
+        src="/images/The_Furies_Band_Logo.png"
+        alt=""
+        width="160"
+        height="98"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
     <p class="site-footer__copy">
-      © {year} The Furies Archive &mdash; Toronto 1986–1996
+      © {year} The Furies Archive &mdash; Toronto Proto-Gothic Post-Punk 1986–1996. Archive restoration project ongoing.
     </p>
     <ul class="site-footer__links" role="list">
       <li>
@@ -26,3 +36,11 @@ const year = new Date().getFullYear();
     </ul>
   </div>
 </footer>
+
+<style>
+  .site-footer__brand img {
+    filter: brightness(0.9);
+    max-width: 160px;
+    height: auto;
+  }
+</style>

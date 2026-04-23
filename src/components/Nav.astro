@@ -14,7 +14,15 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 <nav class="site-nav" aria-label="Main navigation">
   <div class="container site-nav__inner">
     <a href="/" class="site-nav__logo" aria-label="The Furies Archive — home">
-      THE FURIES 1986–1996
+      <img
+        src="/images/logo.png"
+        alt=""
+        width="40"
+        height="40"
+        loading="eager"
+        decoding="async"
+      />
+      <span>The Furies 1986–1996</span>
     </a>
     <ul class="site-nav__links" role="list">
       {navLinks.map(({ href, label }) => {

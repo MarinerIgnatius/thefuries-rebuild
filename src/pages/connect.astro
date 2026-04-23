@@ -1,117 +1,96 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 
-const title = 'Connect | The Furies Archive';
-const description = 'Get in touch with The Furies Archive. Contact, social links, and community for fans of Toronto proto-goth post-punk 1986–1996.';
-
-// NOTE from archive: Social links are placeholders on the live site.
-// The Wix social bar points to facebook.com, instagram.com, x.com,
-// tiktok.com, bandcamp.com, youtube.com — with no actual handles set.
-// Decide before launch whether to drop, keep placeholders, or set real accounts.
-// Contact: thefuries1986@gmail.com (confirmed — no Wix Form anywhere).
-
-const socials = [
-  { platform: 'Instagram',  href: '#',  note: 'Handle TBD' },
-  { platform: 'Facebook',   href: '#',  note: 'Handle TBD' },
-  { platform: 'X / Twitter',href: '#',  note: 'Handle TBD' },
-  { platform: 'Bandcamp',   href: '#',  note: 'Handle TBD' },
-  { platform: 'YouTube',    href: '#',  note: 'Handle TBD' },
-  { platform: 'TikTok',     href: '#',  note: 'Handle TBD' },
-];
+const title = 'Connect | The Furies Archive — Share your photos and stories';
+const description = 'Connect with The Furies Archive. Share your photos, video, and stories from Toronto\'s proto-goth underground 1986–1996 to help preserve the scene.';
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/images/BG_Daniel_5.jpg"
+>
 
-  <!-- ── Hero ──────────────────────────────────────────────────── -->
-  <section class="hero" style="min-height:260px;" aria-labelledby="connect-heading">
-    <div class="hero__overlay" aria-hidden="true" style="background:linear-gradient(to top, var(--black) 30%, rgba(0,0,0,0.6))"></div>
+  <!-- ── Hero ─────────────────────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <img
+      class="hero__bg"
+      src="/images/BG_Daniel_5.jpg"
+      alt="The Furies — connect with the archive, Toronto proto-goth underground"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="hero__overlay" aria-hidden="true"></div>
     <div class="container hero__content">
-      <p class="hero__eyebrow">Underground</p>
-      <h1 class="hero__title" id="connect-heading">
-        CONNECT
+      <h1 class="hero__eyebrow" id="hero-heading">
+        Connect: The Furies Archive. Share your photos, video and stories to help archive it.
       </h1>
-      <p class="hero__subtitle">Grit from the Original Underground</p>
+      <p class="hero__display">Preserving the Noise. Expanding the Archive.</p>
     </div>
   </section>
 
-  <section class="section">
+  <!-- ── 01 Band Archive ───────────────────────────────────────── -->
+  <section class="section" aria-labelledby="band-archive-heading">
     <div class="container">
-      <div class="two-col" style="gap:clamp(2rem,6vw,5rem);">
-
-        <!-- Contact -->
-        <div>
-          <span class="section-label">Contact</span>
-          <h2 style="margin-bottom:1.25rem;">Get in touch</h2>
-          <p style="margin-bottom:2rem; color:var(--mid);">
-            For archive inquiries, press, licensing, or anything related to
-            The Furies 1986–1996.
-          </p>
-          <!-- Full content re-pulled from live site during rebuild -->
-          <div class="placeholder-notice" style="margin-bottom:2rem;">
-            Contact content — re-pull from thefuries1986.com/connect during rebuild
-          </div>
-          <a
-            href="mailto:thefuries1986@gmail.com"
-            class="btn btn--accent"
-          >
-            thefuries1986@gmail.com
-          </a>
-        </div>
-
-        <!-- Social / community -->
-        <div>
-          <span class="section-label">Social</span>
-          <h2 style="margin-bottom:1.25rem;">Follow the Archive</h2>
-          <p style="margin-bottom:1.5rem; color:var(--mid); font-size:0.85rem;">
-            ⚠️ Social handles not yet confirmed — update before launch.
-          </p>
-          <div style="display:flex; flex-direction:column; gap:0; border:1px solid var(--border);">
-            {socials.map(({ platform, href, note }) => (
-              <a
-                href={href}
-                style={`
-                  display:flex;
-                  justify-content:space-between;
-                  align-items:center;
-                  padding:1rem 1.25rem;
-                  border-bottom:1px solid var(--border);
-                  font-family:var(--font-mono);
-                  font-size:0.75rem;
-                  letter-spacing:0.12em;
-                  text-transform:uppercase;
-                  color:var(--mid);
-                  transition:background 0.2s, color 0.2s;
-                `}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {platform}
-                <span style="font-size:0.62rem; color:var(--accent); letter-spacing:0.08em;">{note}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Merch -->
-      <div class="merch-cta" style="margin-top:4rem;">
-        <div>
-          <span class="section-label">The Shop</span>
-          <p class="merch-cta__text">
-            Merch is hosted externally at Fourthwall — nothing to migrate.
-            Every purchase supports the archive directly.
-          </p>
-        </div>
-        <a
-          href="https://thefuries1986-shop.fourthwall.com"
-          class="btn btn--accent"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visit the Shop →
+      <h1 class="section-eyebrow reveal">01 · Band Archive</h1>
+      <div class="reveal" style="max-width: 65ch;">
+        <h2 id="band-archive-heading">Rolls of film. Cassettes. Flyers.</h2>
+        <p style="margin-top: 2rem;">
+          If you photographed, filmed, or recorded The Furies live — if you saved a flyer, a poster, a set-list, a cassette — the archive wants what you have. Scans, uploads, or originals for digitizing.
+        </p>
+        <a href="mailto:thefuries1986@gmail.com?subject=Band%20Archive%20Contribution" class="btn btn--accent" style="margin-top: 2.5rem;">
+          Send to thefuries1986@gmail.com
         </a>
       </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── 02 Scene Front Lines ──────────────────────────────────── -->
+  <section class="section section--raised" aria-labelledby="scene-lines-heading">
+    <div class="container">
+      <h1 class="section-eyebrow reveal">02 · Scene Front Lines</h1>
+      <div class="reveal" style="max-width: 65ch;">
+        <h2 id="scene-lines-heading">Were you at the Twilight Zone, Catch 22, Sanctuary?</h2>
+        <p style="margin-top: 2rem;">
+          Venue photos, backroom portraits, DJ-booth footage, crowd shots, fashion. The scene lived in analog — we're restoring it one contribution at a time.
+        </p>
+        <a href="mailto:thefuries1986@gmail.com?subject=Scene%20Archive%20Contribution" class="btn btn--accent" style="margin-top: 2.5rem;">
+          Contribute scene material
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── 03 Open Signal ────────────────────────────────────────── -->
+  <section class="section" aria-labelledby="signal-heading">
+    <div class="container">
+      <h1 class="section-eyebrow reveal">03 · Open Signal</h1>
+      <div class="reveal" style="max-width: 65ch;">
+        <h2 id="signal-heading">Press. Licensing. Research. Interviews.</h2>
+        <p style="margin-top: 2rem;">
+          For press inquiries, sync-licensing requests, academic research, or interview scheduling — use the channel below. Responses typically within 72 hours.
+        </p>
+        <a href="mailto:thefuries1986@gmail.com" class="btn btn--accent" style="margin-top: 2.5rem;">
+          thefuries1986@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Grit pullquote ─────────────────────────────────────────── -->
+  <section class="section section--raised" aria-labelledby="grit-heading">
+    <div class="container pull-quote reveal">
+      <p class="pull-quote__text" id="grit-heading">
+        Grit from the Original Underground.
+      </p>
+      <cite class="pull-quote__attribution">A Staple of the Goth Nightclub Circuit</cite>
     </div>
   </section>
 

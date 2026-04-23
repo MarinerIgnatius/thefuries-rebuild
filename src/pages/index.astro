@@ -2,173 +2,229 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 
 const title = 'The Furies Archive | Toronto Proto-Goth Post-Punk 1986–1996';
-const description = 'The definitive archive of The Furies – Toronto\'s proto-gothic post-punk institution. Photos, history, interviews, and the full story of a scene that came before the name existed.';
+const description = 'The definitive archive of The Furies — Toronto\'s proto-gothic post-punk institution. Photos, history, interviews, and the full story of a scene that came before the name existed.';
 
-const sections = [
+const members = [
   {
-    href: '/band',
-    label: 'The Band',
-    title: 'The Furies Story',
-    desc: 'Proto-Gothic Originators. 40 Years Before Their Time.',
+    name: 'Daniel Riley',
+    role: 'Vocals · Lyrics',
+    img: '/images/the-furies-Toronto-proto-goth-underground_Daniel_Riley.jpg',
+    alt: 'Daniel Riley — The Furies vocalist, Toronto proto-goth underground, 1986–1996',
   },
   {
-    href: '/scene',
-    label: 'The Scene',
-    title: 'Little Gotham',
-    desc: 'The Scene. The Sound. The Subversion.',
+    name: 'Jeff Riley',
+    role: 'Guitar · Founder',
+    img: '/images/the-furies-Toronto-proto-goth-underground_Jeff_Riley.jpg',
+    alt: 'Jeff Riley — The Furies guitarist and co-founder, Toronto proto-goth underground',
   },
   {
-    href: '/media',
-    label: 'Archive',
-    title: 'Images · Posters · Video',
-    desc: 'From the Archives. The Source Material.',
+    name: 'Mark Stewart',
+    role: 'Bass',
+    img: '/images/the-furies-Toronto-proto-goth-underground_Mark_Stewart.jpg',
+    alt: 'Mark Stewart — The Furies bassist, Toronto proto-goth underground',
   },
   {
-    href: '/afterlives',
-    label: 'Post-1996',
-    title: 'Afterlives',
-    desc: 'Afterlives. Lineage &amp; Legacy.',
-  },
-  {
-    href: '/connect',
-    label: 'Underground',
-    title: 'Grit from the Original Underground',
-    desc: 'Stay connected to the archive.',
+    name: 'Steve Lafourtune',
+    role: 'Drums',
+    img: '/images/the-furies-Toronto-proto-goth-underground_Steve_Lafourtune.jpg',
+    alt: 'Steve Lafourtune — The Furies drummer, Toronto proto-goth underground',
   },
 ];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage="/images/the-furies-Toronto-proto-goth-underground_80s.jpg"
+>
 
-  <!-- ── Hero ──────────────────────────────────────────────────── -->
+  <!-- ── Hero ─────────────────────────────────────────────────────── -->
   <section class="hero" aria-labelledby="hero-heading">
-    <!-- Replace src with actual hero image once assets downloaded -->
     <img
       class="hero__bg"
-      src="/images/hero-home.jpg"
-      alt="The Furies live, Toronto 1986–1996"
+      src="/images/the-furies-Toronto-proto-goth-underground_80s.jpg"
+      alt="The Furies — Toronto proto-goth underground, 1986–1996"
       loading="eager"
+      fetchpriority="high"
+      decoding="async"
     />
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="container hero__content">
-      <p class="hero__eyebrow">Toronto 1986–1996</p>
-      <h1 class="hero__title" id="hero-heading">
-        ENTRY: TORONTO<br />PROTO-GOTH
-      </h1>
-      <p class="hero__subtitle">
-        "Essential to Fostering the Goth Movement and Setting the Tone<br />
-        for Style, Sound and Subversion."
-        <br />
-        <span class="text-faded text-mono" style="font-size:0.65rem;">— BLOGTO, TOP 10 TORONTO GOTH BANDS</span>
+      <h1 class="hero__eyebrow" id="hero-heading">Entry: Toronto Proto-Goth</h1>
+      <p class="hero__display">
+        Essential to Fostering the Goth Movement and Setting the Tone for Style, Sound and Subversion.
       </p>
+      <span class="hero__attribution">— BlogTO, Top 10 Toronto Goth Bands</span>
     </div>
   </section>
 
-  <!-- ── Band teaser ──────────────────────────────────────────── -->
-  <section class="section section--tight" aria-label="Band overview">
+  <!-- ── Origins / The Band ──────────────────────────────────────── -->
+  <section class="section" aria-labelledby="band-heading">
     <div class="container">
-      <span class="section-label">The Band</span>
-      <div class="two-col">
-        <div class="prose">
-          <h2>Proto-Gothic Originators.<br />40 Years Before Their Time.</h2>
-          <p>
-            Originating at the exact flashpoint where Toronto's post-punk scene
-            darkened into goth, The Furies provided the early pulse for an
-            underground movement that soon gained global significance.
+      <h1 class="section-eyebrow reveal">The Band</h1>
+      <div class="split reveal">
+        <div class="split__text">
+          <h2 id="band-heading">Proto-Gothic Originators. 40 Years Before Their Time.</h2>
+          <p style="margin-top: 2rem;">
+            Originating at the exact flashpoint where Toronto's post-punk scene darkened into goth, The Furies provided the early pulse for an underground movement that soon gained global significance.
           </p>
-          <p>
-            The Furies didn't appear in isolation. They were a byproduct of a
-            city's hardening edges — a collision of Queen Street's basement
-            economies, the subcultural drift of the disenfranchised, and the
-            predatory glamour of a scene refining its instincts in the dark. To
-            understand the band is to navigate the geography of that transition:
-            the nights where Toronto's underground finally found its pulse.
+          <p style="margin-top: 1rem;">
+            The Furies didn't appear in isolation. They were a byproduct of a city's hardening edges — a collision of Queen Street's basement economies, the subcultural drift of the disenfranchised, and the predatory glamour of a scene refining its instincts in the dark.
           </p>
-          <a href="/band" class="btn btn--accent" style="align-self:flex-start; margin-top:0.5rem;">
-            Read the full story
-          </a>
+          <a href="/band" class="btn btn--accent" style="margin-top: 2.5rem;">Read the full story</a>
         </div>
-        <div>
-          <!-- Band image placeholder — swap in from assets/ folder -->
-          <img
-            src="/images/band-hero.jpg"
-            alt="The Furies band photo"
-            style="width:100%; filter:grayscale(70%) contrast(1.1); display:block;"
-            loading="lazy"
-          />
+        <div class="split__media">
+          <div class="media-panel">
+            <img
+              src="/images/the-furies-Toronto-proto-goth-underground_Daniel_Riley.jpg"
+              alt="Daniel Riley — The Furies, Toronto proto-goth underground"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <hr style="margin:0; border-color:var(--border);" />
-
-  <!-- ── Entry grid ───────────────────────────────────────────── -->
-  <section class="section section--tight" aria-label="Archive sections">
-    <div class="container">
-      <span class="section-label">Navigate the Archive</span>
-      <div class="entry-grid">
-        {sections.map(({ href, label, title: cardTitle, desc }) => (
-          <a href={href} class="entry-card">
-            <span class="entry-card__label">{label}</span>
-            <span class="entry-card__title" set:html={cardTitle} />
-            <span class="entry-card__desc" set:html={desc} />
-          </a>
+      <!-- Band member grid -->
+      <div class="entry-grid reveal" style="margin-top: 4rem;">
+        {members.map(({ name, role, img, alt }) => (
+          <div class="entry-card" style="cursor: default;">
+            <div class="media-panel" style="aspect-ratio: 16/9; margin: -2.5rem -2rem 1.5rem; width: auto;">
+              <img src={img} alt={alt} loading="lazy" decoding="async" />
+            </div>
+            <span class="entry-card__label">{role}</span>
+            <span class="entry-card__title">{name}</span>
+          </div>
         ))}
       </div>
     </div>
   </section>
 
-  <hr style="margin:0; border-color:var(--border);" />
+  <hr />
 
-  <!-- ── Scene teaser ─────────────────────────────────────────── -->
-  <section class="section section--tight" aria-label="Scene overview">
+  <!-- ── BlogTO Pullquote (Wix signature display block) ─────────── -->
+  <section class="section section--raised" aria-labelledby="pullquote-heading">
+    <div class="container pull-quote reveal">
+      <p class="pull-quote__text" id="pullquote-heading">
+        A Staple of the Goth Nightclub Circuit.
+      </p>
+      <cite class="pull-quote__attribution">BlogTO · Top 10 Toronto Goth Bands of All Time</cite>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Scene teaser ───────────────────────────────────────────── -->
+  <section class="section" aria-labelledby="scene-heading">
     <div class="container">
-      <span class="section-label">The Scene</span>
-      <h2 style="margin-bottom:1.5rem;">The Scene. The Sound. The Subversion.</h2>
-      <div class="two-col">
-        <div class="prose">
-          <p>
-            In the mid-1980s, a specific high-decibel gloom settled over Toronto,
-            earning the city a moniker that would define its subterranean identity
-            for decades: Little Gotham. While the rest of North America drowned in
-            pastel excess, Toronto was building a fortress of black lace,
-            industrial concrete, and synthetic isolation.
+      <h1 class="section-eyebrow reveal">The Scene</h1>
+      <div class="split split--text-left reveal">
+        <div class="split__text">
+          <h2 id="scene-heading">The Scene. The Sound. The Subversion.</h2>
+          <p style="margin-top: 2rem;">
+            In the mid-1980s, a specific high-decibel gloom settled over Toronto, earning the city a moniker that would define its subterranean identity for decades: Little Gotham. While the rest of North America drowned in pastel excess, Toronto was building a fortress of black lace, industrial concrete, and synthetic isolation.
           </p>
-          <p>
-            One of the most concentrated alternative hubs on the planet, rivalling
-            London and Berlin in tribal commitment.
+          <p style="margin-top: 1rem;">
+            One of the most concentrated alternative hubs on the planet — rivalling London and Berlin in tribal commitment.
           </p>
-          <a href="/scene" class="btn btn--accent" style="align-self:flex-start;">
-            Enter the scene
-          </a>
+          <a href="/scene" class="btn btn--accent" style="margin-top: 2.5rem;">Enter the scene</a>
         </div>
-        <div>
-          <img
-            src="/images/scene-hero.jpg"
-            alt="Little Gotham — Toronto underground, 1986"
-            style="width:100%; filter:grayscale(70%) contrast(1.05); display:block;"
-            loading="lazy"
-          />
+        <div class="split__media">
+          <div class="media-panel">
+            <img
+              src="/images/scene.jpg"
+              alt="Little Gotham — Toronto underground alternative scene, 1986–1996"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <hr style="margin:0; border-color:var(--border);" />
+  <hr />
 
-  <!-- ── Merch CTA ─────────────────────────────────────────────── -->
-  <section class="section section--tight" aria-label="Support the archive">
+  <!-- ── Archive teaser ─────────────────────────────────────────── -->
+  <section class="section section--raised" aria-labelledby="archive-heading">
     <div class="container">
-      <div class="merch-cta">
+      <h1 class="section-eyebrow reveal">The Archive</h1>
+      <div class="split reveal">
+        <div class="split__text">
+          <h2 id="archive-heading">From the Archives. The Source Material.</h2>
+          <p style="margin-top: 2rem;">
+            Photos, posters, flyers, and video fragments salvaged from ten years of underground Toronto. The archive is a live restoration — film digitized, negatives scanned, posters indexed.
+          </p>
+          <a href="/media" class="btn btn--accent" style="margin-top: 2.5rem;">Enter the archive</a>
+        </div>
+        <div class="split__media">
+          <div class="media-panel">
+            <img
+              src="/images/the-furies-jeff_riley-Toronto-proto-goth-underground_80s.jpg"
+              alt="Jeff Riley — The Furies, Toronto proto-goth underground, 1980s archive photo"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Afterlives teaser ──────────────────────────────────────── -->
+  <section class="section" aria-labelledby="afterlives-heading">
+    <div class="container">
+      <h1 class="section-eyebrow reveal">Post-1996</h1>
+      <div class="split split--text-left reveal">
+        <div class="split__text">
+          <h2 id="afterlives-heading">Afterlives. Lineage & Legacy.</h2>
+          <p style="margin-top: 2rem;">
+            After The Furies dissolved in 1996, the players fanned out across Toronto's darkwave lineage: Sylvania, Millionaires, Fleurs Du Mal. Collaborations with Mars Roberge, Rob Sanzo, Steve Leckie, Jennifer Swain.
+          </p>
+          <a href="/afterlives" class="btn btn--accent" style="margin-top: 2.5rem;">Follow the lineage</a>
+        </div>
+        <div class="split__media">
+          <div class="media-panel">
+            <img
+              src="/images/Sylvania_Band_Darkwave_Toronto.jpg"
+              alt="Sylvania — Toronto darkwave, post-Furies lineage"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Connect teaser ─────────────────────────────────────────── -->
+  <section class="section section--raised" aria-labelledby="connect-heading">
+    <div class="container">
+      <h1 class="section-eyebrow reveal">Underground</h1>
+      <div class="reveal" style="max-width: 60ch;">
+        <h2 id="connect-heading">Grit from the Original Underground.</h2>
+        <p style="margin-top: 2rem;">
+          Share your photos, video, and stories to help archive it. The scene lived in analog — rolls of film, cassettes, flyers stapled to hydro poles. If you were there, we want what you saved.
+        </p>
+        <a href="/connect" class="btn btn--accent" style="margin-top: 2.5rem;">Contribute to the archive</a>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Merch CTA ──────────────────────────────────────────────── -->
+  <section class="section" aria-label="Support the archive">
+    <div class="container">
+      <div class="merch-cta reveal">
         <div>
-          <span class="section-label">Support the Work</span>
+          <h1 class="section-eyebrow" style="margin-bottom: 1rem;">Support the Work</h1>
           <p class="merch-cta__text">
-            The Furies Archive is a labor of restoration — a digital deep-dive
-            into ten years of Toronto darkwave history. Every purchase in this
-            shop goes directly toward hosting costs, film digitizing, and the
-            ongoing preservation of the 1986–1996 legacy. Wear the grit, support
-            the history.
+            The Furies Archive is a labor of restoration — a digital deep-dive into ten years of Toronto darkwave history. Every purchase in this shop goes directly toward hosting costs, film digitizing, and the ongoing preservation of the 1986–1996 legacy. Wear the grit, support the history.
           </p>
         </div>
         <a
