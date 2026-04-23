@@ -1,0 +1,63 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const title = 'Afterlives. Lineage & Legacy | The Furies Archive';
+const description = 'From the dissolution of The Furies came a series of new trajectories — parallel projects and sonic departures that carried the band\'s original friction into new spaces. 1996 and beyond.';
+---
+
+<BaseLayout title={title} description={description}>
+
+  <!-- ── Hero ──────────────────────────────────────────────────── -->
+  <section class="hero" style="min-height:300px;" aria-labelledby="afterlives-heading">
+    <img
+      class="hero__bg"
+      src="/images/afterlives-hero.jpg"
+      alt="The Furies — afterlives, lineage and legacy"
+      loading="eager"
+    />
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow">Post-1996</p>
+      <h1 class="hero__title" id="afterlives-heading">
+        AFTERLIVES.<br />LINEAGE &amp; LEGACY
+      </h1>
+      <p class="hero__subtitle">
+        The decade didn't simply end; it fractured.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Intro ─────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">After 1996</span>
+      <div class="prose" style="max-width:75ch;">
+        <p style="font-size:1.05rem; color:var(--light);">
+          From the dissolution of the core lineup came a series of new trajectories
+          — parallel projects and sonic departures that carried the band's original
+          friction into new spaces. These are the offshoots of the 1986–1996 run:
+          the next movements for those who were there.
+        </p>
+      </div>
+
+      <!-- Full Afterlives content re-pulled from live site during rebuild -->
+      <div class="placeholder-notice" style="margin-top:3rem;">
+        Full Afterlives content — re-pull from thefuries1986.com/afterlives during rebuild.<br />
+        <span style="font-size:0.65rem; opacity:0.6; letter-spacing:0; text-transform:none;">
+          Do not cancel Wix until this page is populated.
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Nav CTA ───────────────────────────────────────────────── -->
+  <section class="section section--tight">
+    <div class="container" style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+      <a href="/media" class="btn btn--accent">← Archive Media</a>
+      <a href="/connect" class="btn btn--accent">Connect →</a>
+    </div>
+  </section>
+
+</BaseLayout>

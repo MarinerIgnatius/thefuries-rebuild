@@ -1,0 +1,11 @@
+# Cloudflare Pages redirect rules
+# Migrate from Wix URL structure if needed
+
+# Wix sometimes adds trailing slashes — normalize
+/band/     /band     301
+/scene/    /scene    301
+/media/    /media    301
+/afterlives/ /afterlives 301
+/connect/  /connect  301
+
+# 404 fallback (Cloudflare Pages serves 404.html automatically)

@@ -1,0 +1,131 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const title = 'Archive Media — Images · Posters · Video | The Furies Archive';
+const description = 'Photos, show posters, and video from The Furies — Toronto proto-goth post-punk, 1986–1996. The source material from the underground.';
+
+// Populated once download-assets.sh is run locally.
+// Add entries as: { src: '/images/filename.jpg', alt: 'caption', type: 'photo' | 'poster' | 'video' }
+const mediaItems: { src: string; alt: string; type: string }[] = [];
+---
+
+<BaseLayout title={title} description={description}>
+
+  <!-- ── Hero ──────────────────────────────────────────────────── -->
+  <section class="hero" style="min-height:300px;" aria-labelledby="media-heading">
+    <img
+      class="hero__bg"
+      src="/images/media-hero.jpg"
+      alt="The Furies — archival material"
+      loading="eager"
+    />
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow">Archive</p>
+      <h1 class="hero__title" id="media-heading">
+        MEDIA: IMAGES —<br />
+        SHOW POSTERS — VIDEO
+      </h1>
+      <p class="hero__subtitle">From the Archives. The Source Material.</p>
+    </div>
+  </section>
+
+  <!-- ── Filter tabs (static, JS-enhanced) ─────────────────────── -->
+  <section class="section section--tight">
+    <div class="container">
+      <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:2.5rem;" role="tablist" aria-label="Media type filter">
+        {['All', 'Photos', 'Posters', 'Video'].map((tab, i) => (
+          <button
+            class="btn btn--accent"
+            style={`font-size:0.65rem; padding:0.6rem 1.25rem; ${i === 0 ? 'background:var(--accent-dim);' : 'opacity:0.5;'}`}
+            data-filter={tab.toLowerCase()}
+            aria-pressed={i === 0}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      {mediaItems.length === 0 ? (
+        <div>
+          <div class="placeholder-notice">
+            <p style="margin-bottom:0.75rem;">Images &amp; video load here.</p>
+            <p style="font-size:0.65rem; opacity:0.6; text-transform:none; letter-spacing:0;">
+              Run <code style="color:var(--accent);">download-assets.sh</code> locally,<br />
+              copy output to <code style="color:var(--accent);">public/images/</code>,<br />
+              then add entries to the <code style="color:var(--accent);">mediaItems</code> array in this file<br />
+              or wire up Decap CMS to manage them.
+            </p>
+          </div>
+
+          <div style="margin-top:3rem;">
+            <span class="section-label">Source URLs (47 assets)</span>
+            <p class="text-mid" style="font-size:0.85rem; margin-top:0.5rem;">
+              All original Wix CDN asset URLs are catalogued in
+              <code style="color:var(--accent); font-size:0.8rem;">manifest/00-master-urls.txt</code>.
+              Run the download script before cancelling Wix.
+            </p>
+          </div>
+        </div>
+      ) : (
+        <div class="image-strip" id="media-grid">
+          {mediaItems.map(({ src, alt, type }) => (
+            <figure data-type={type} style="position:relative; margin:0;">
+              <img src={src} alt={alt} loading="lazy" />
+              <figcaption style="
+                position:absolute; bottom:0; left:0; right:0;
+                padding:0.5rem 0.75rem;
+                background:linear-gradient(transparent, rgba(0,0,0,0.8));
+                font-family:var(--font-mono);
+                font-size:0.62rem;
+                letter-spacing:0.08em;
+                color:var(--mid);
+                text-transform:uppercase;
+              ">
+                {alt}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Nav CTA ───────────────────────────────────────────────── -->
+  <section class="section section--tight">
+    <div class="container" style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+      <a href="/scene" class="btn btn--accent">← The Scene</a>
+      <a href="/afterlives" class="btn btn--accent">Afterlives →</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  // Simple client-side filter — no framework needed
+  const buttons = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+  const items   = document.querySelectorAll<HTMLElement>('[data-type]');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter!;
+      buttons.forEach(b => {
+        b.style.opacity = '0.5';
+        b.style.background = 'transparent';
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.style.opacity = '1';
+      btn.style.background = 'var(--accent-dim)';
+      btn.setAttribute('aria-pressed', 'true');
+
+      items.forEach(item => {
+        item.style.display =
+          filter === 'all' || item.dataset.type === filter.replace(/s$/, '')
+            ? 'block'
+            : 'none';
+      });
+    });
+  });
+</script>

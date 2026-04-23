@@ -1,0 +1,118 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const title = 'Connect | The Furies Archive';
+const description = 'Get in touch with The Furies Archive. Contact, social links, and community for fans of Toronto proto-goth post-punk 1986–1996.';
+
+// NOTE from archive: Social links are placeholders on the live site.
+// The Wix social bar points to facebook.com, instagram.com, x.com,
+// tiktok.com, bandcamp.com, youtube.com — with no actual handles set.
+// Decide before launch whether to drop, keep placeholders, or set real accounts.
+// Contact: thefuries1986@gmail.com (confirmed — no Wix Form anywhere).
+
+const socials = [
+  { platform: 'Instagram',  href: '#',  note: 'Handle TBD' },
+  { platform: 'Facebook',   href: '#',  note: 'Handle TBD' },
+  { platform: 'X / Twitter',href: '#',  note: 'Handle TBD' },
+  { platform: 'Bandcamp',   href: '#',  note: 'Handle TBD' },
+  { platform: 'YouTube',    href: '#',  note: 'Handle TBD' },
+  { platform: 'TikTok',     href: '#',  note: 'Handle TBD' },
+];
+---
+
+<BaseLayout title={title} description={description}>
+
+  <!-- ── Hero ──────────────────────────────────────────────────── -->
+  <section class="hero" style="min-height:260px;" aria-labelledby="connect-heading">
+    <div class="hero__overlay" aria-hidden="true" style="background:linear-gradient(to top, var(--black) 30%, rgba(0,0,0,0.6))"></div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow">Underground</p>
+      <h1 class="hero__title" id="connect-heading">
+        CONNECT
+      </h1>
+      <p class="hero__subtitle">Grit from the Original Underground</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="two-col" style="gap:clamp(2rem,6vw,5rem);">
+
+        <!-- Contact -->
+        <div>
+          <span class="section-label">Contact</span>
+          <h2 style="margin-bottom:1.25rem;">Get in touch</h2>
+          <p style="margin-bottom:2rem; color:var(--mid);">
+            For archive inquiries, press, licensing, or anything related to
+            The Furies 1986–1996.
+          </p>
+          <!-- Full content re-pulled from live site during rebuild -->
+          <div class="placeholder-notice" style="margin-bottom:2rem;">
+            Contact content — re-pull from thefuries1986.com/connect during rebuild
+          </div>
+          <a
+            href="mailto:thefuries1986@gmail.com"
+            class="btn btn--accent"
+          >
+            thefuries1986@gmail.com
+          </a>
+        </div>
+
+        <!-- Social / community -->
+        <div>
+          <span class="section-label">Social</span>
+          <h2 style="margin-bottom:1.25rem;">Follow the Archive</h2>
+          <p style="margin-bottom:1.5rem; color:var(--mid); font-size:0.85rem;">
+            ⚠️ Social handles not yet confirmed — update before launch.
+          </p>
+          <div style="display:flex; flex-direction:column; gap:0; border:1px solid var(--border);">
+            {socials.map(({ platform, href, note }) => (
+              <a
+                href={href}
+                style={`
+                  display:flex;
+                  justify-content:space-between;
+                  align-items:center;
+                  padding:1rem 1.25rem;
+                  border-bottom:1px solid var(--border);
+                  font-family:var(--font-mono);
+                  font-size:0.75rem;
+                  letter-spacing:0.12em;
+                  text-transform:uppercase;
+                  color:var(--mid);
+                  transition:background 0.2s, color 0.2s;
+                `}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {platform}
+                <span style="font-size:0.62rem; color:var(--accent); letter-spacing:0.08em;">{note}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Merch -->
+      <div class="merch-cta" style="margin-top:4rem;">
+        <div>
+          <span class="section-label">The Shop</span>
+          <p class="merch-cta__text">
+            Merch is hosted externally at Fourthwall — nothing to migrate.
+            Every purchase supports the archive directly.
+          </p>
+        </div>
+        <a
+          href="https://thefuries1986-shop.fourthwall.com"
+          class="btn btn--accent"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit the Shop →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

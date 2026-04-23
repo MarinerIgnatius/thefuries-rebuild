@@ -1,0 +1,172 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const title = 'Toronto Underground Little Gotham 1986–1996 | The Furies Archive';
+const description = 'The scene that birthed The Furies — Little Gotham, Toronto\'s proto-goth underground 1986–1996. Venues, DJs, the Shadow Circuit, and the city that came before the name existed.';
+
+const venues = [
+  {
+    name: 'Twilight Zone',
+    address: '185 Richmond St W.',
+    status: 'defunct',
+    desc: 'Sanctuary for the gloom-heavy elite. The room to see The Mission (UK) or The Fall testing their darkest material. Icons like Mark E. Smith or Wayne Hussey treated the backroom as an avant-garde salon where the mainstream world was strictly forbidden.',
+  },
+  {
+    name: 'Big Bop / Katedral',
+    address: '651 Queen St W.',
+    status: 'defunct',
+    desc: 'A three-story gargoyle mansion at Queen and Bathurst. Splintered wood aesthetic where punk, goth, and industrial acts dominated three levels simultaneously. Gig-sizer EbS shaking the foundations; Christian Death and London After Midnight defining the industrial-gothic crossover.',
+  },
+  {
+    name: 'Horseshoe Tavern',
+    address: '370 Queen St W.',
+    status: 'active',
+    desc: 'The jagged soul of the Queen West scene. Proving ground for the Positive Punk explosion. Same boards as Bauhaus and The Viltonnes. Blondie presence loomed large; The Stranglers debuted North America.',
+  },
+  {
+    name: 'Catch 22',
+    address: '379 Adelaide St W.',
+    status: 'defunct',
+    desc: 'A cavern of strobe lights and steel; high-priestess for early-90s EBM. Originally a storage space, mutated into an industrial sanctuary under owner Pat Violo (a notorious Cure devotee). Die Ji Mars and Michael X broke hard-EBM imports from the "Secret Doctors of Rhythm." Regular haunt for Marilyn Manson and of The Occult.',
+  },
+  {
+    name: 'Bovine Sex Club',
+    address: '542 Queen St W.',
+    status: 'active',
+    desc: 'Junk-art baroque lobby for the leather-and-studs hierarchy, opened \'91 as the Shadow Circuit transitioned into its most aggressive gear. Pioneered Jägermeister on tap to the industrial elite. Magnetic retreat for Trent Reznor during the Downward Spiral era. Al Jourgensen\'s late-night sanctuary.',
+  },
+  {
+    name: 'Slither Club',
+    address: '322 Richmond St W.',
+    status: 'defunct',
+    desc: 'The oil-slicked basement of The Generator. Absolute epicenter for the mechanical industrial noise movement — dark, claustrophobic bunker. Primary laboratory for Digital Poodle.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+
+  <!-- ── Hero ──────────────────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="scene-heading">
+    <img
+      class="hero__bg"
+      src="/images/scene-hero.jpg"
+      alt="Little Gotham — Toronto underground, 1986"
+      loading="eager"
+    />
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow">The Scene</p>
+      <h1 class="hero__title" id="scene-heading">
+        SCENE: TORONTO<br />
+        UNDERGROUND —<br />
+        LITTLE GOTHAM<br />
+        1986–1996
+      </h1>
+    </div>
+  </section>
+
+  <!-- ── Little Gotham ─────────────────────────────────────────── -->
+  <section class="section" aria-labelledby="little-gotham-heading">
+    <div class="container">
+      <span class="section-label">Little Gotham</span>
+      <h2 id="little-gotham-heading" style="margin-bottom:2rem;">
+        Toronto 1986–1996
+      </h2>
+      <div class="two-col">
+        <div class="prose">
+          <p>
+            In the mid-1980s, a specific high-decibel gloom settled over Toronto,
+            earning the city a moniker that would define its subterranean identity
+            for decades: Little Gotham. While the rest of North America drowned in
+            pastel excess, Toronto was building a fortress of black lace, industrial
+            concrete, and synthetic isolation — one of the most concentrated
+            alternative hubs on the planet, rivalling London and Berlin in tribal
+            commitment.
+          </p>
+          <p>
+            The Moderns of Yonge Street and the Freaks of Queen West ran months
+            ahead of the global curve, moving to post-punk and cold-wave before the
+            genres had names. For The Cure, The Sisters of Mercy, Siouxsie and the
+            Banshees, Bauhaus, and Killing Joke, Toronto wasn't just another tour
+            date — it was a homecoming.
+          </p>
+          <p>
+            The audiences were discerning, monochromatic, and massive. An
+            over-capacity underground club held more punters than most mid-level
+            stadium shows.
+          </p>
+          <!-- Note: full text re-pulled from live site during rebuild -->
+        </div>
+        <div>
+          <img
+            src="/images/little-gotham.jpg"
+            alt="Queen Street West, Toronto — the scene"
+            style="width:100%; filter:grayscale(70%) contrast(1.1); display:block;"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Shadow Circuit ────────────────────────────────────────── -->
+  <section class="section" aria-labelledby="shadow-circuit-heading">
+    <div class="container">
+      <span class="section-label">The Shadow Circuit</span>
+      <h2 id="shadow-circuit-heading" style="margin-bottom:0.5rem;">
+        Toronto 1986–1996
+      </h2>
+      <p class="text-mid" style="margin-bottom:2.5rem; font-family:var(--font-mono); font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">
+        The venues that built the underground
+      </p>
+
+      <div class="venue-list">
+        {venues.map(({ name, address, status, desc }) => (
+          <div style="border-bottom:1px solid var(--border); padding:1.75rem clamp(1rem,3vw,2rem);">
+            <div style="display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom:0.75rem;">
+              <div style="display:flex; align-items:baseline; gap:1.5rem; flex-wrap:wrap;">
+                <span class="venue-item__name">{name}</span>
+                <span class="venue-item__address">{address}</span>
+              </div>
+              <span class={`venue-item__status venue-item__status--${status}`}>
+                {status}
+              </span>
+            </div>
+            <p style="font-size:0.88rem; color:var(--mid); max-width:80ch;">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Sonic Architects ──────────────────────────────────────── -->
+  <section class="section section--tight" aria-labelledby="djs-heading">
+    <div class="container">
+      <span class="section-label">The Sonic Architects</span>
+      <h2 id="djs-heading" style="margin-bottom:1.5rem;">DJs</h2>
+      <p style="max-width:65ch; color:var(--mid);">
+        Content re-pulled from the live site during rebuild.
+        The DJs who defined the sound of Little Gotham — to be restored here.
+      </p>
+      <div class="placeholder-notice" style="margin-top:2rem;">
+        Full Sonic Architects content — re-pull from thefuries1986.com/scene during rebuild
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Nav CTA ───────────────────────────────────────────────── -->
+  <section class="section section--tight">
+    <div class="container" style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+      <a href="/band" class="btn btn--accent">← The Band</a>
+      <a href="/media" class="btn btn--accent">Archive Media →</a>
+    </div>
+  </section>
+
+</BaseLayout>

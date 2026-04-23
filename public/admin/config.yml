@@ -1,0 +1,129 @@
+# Decap CMS Configuration — The Furies Archive
+# Docs: https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Cloudflare Pages Git Gateway (or use GitHub backend directly):
+# backend:
+#   name: github
+#   repo: YOUR-GITHUB-USERNAME/thefuries-archive
+#   branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+site_url: https://www.thefuries1986.com
+display_url: https://www.thefuries1986.com
+
+# Show preview links in the editor
+show_preview_links: true
+
+collections:
+
+  # ── Pages (hand-authored, CMS-editable) ───────────────────────
+  - name: "pages"
+    label: "Pages"
+    files:
+
+      - name: "home"
+        label: "Home / Entry"
+        file: "src/content/pages/home.md"
+        fields:
+          - { label: "Hero eyebrow", name: "eyebrow", widget: "string", default: "Toronto 1986–1996" }
+          - { label: "H1", name: "h1", widget: "string", default: "ENTRY: TORONTO PROTO-GOTH" }
+          - { label: "Hero subtitle / pull quote", name: "subtitle", widget: "string" }
+          - { label: "Band teaser body", name: "band_teaser", widget: "markdown" }
+          - { label: "Scene teaser body", name: "scene_teaser", widget: "markdown" }
+          - { label: "Merch CTA text", name: "merch_cta", widget: "text" }
+
+      - name: "band"
+        label: "Band"
+        file: "src/content/pages/band.md"
+        fields:
+          - { label: "H1", name: "h1", widget: "string" }
+          - { label: "Hero subtitle", name: "subtitle", widget: "string" }
+          - { label: "Intro paragraph 1", name: "intro_1", widget: "text" }
+          - { label: "Intro paragraph 2", name: "intro_2", widget: "text" }
+          - { label: "Pull quote text", name: "pull_quote", widget: "string" }
+          - { label: "Pull quote attribution", name: "pull_attribution", widget: "string" }
+          - label: "Timeline entries"
+            name: "timeline"
+            widget: "list"
+            fields:
+              - { label: "Period label", name: "period", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+              - { label: "Aside note (optional)", name: "aside", widget: "string", required: false }
+
+      - name: "scene"
+        label: "Scene"
+        file: "src/content/pages/scene.md"
+        fields:
+          - { label: "H1", name: "h1", widget: "string" }
+          - { label: "Little Gotham body", name: "little_gotham", widget: "markdown" }
+          - label: "Shadow Circuit Venues"
+            name: "venues"
+            widget: "list"
+            fields:
+              - { label: "Venue name", name: "name", widget: "string" }
+              - { label: "Address", name: "address", widget: "string" }
+              - { label: "Status", name: "status", widget: "select", options: ["active", "defunct"] }
+              - { label: "Description", name: "desc", widget: "text" }
+          - { label: "Sonic Architects body", name: "djs", widget: "markdown", required: false }
+
+      - name: "afterlives"
+        label: "Afterlives"
+        file: "src/content/pages/afterlives.md"
+        fields:
+          - { label: "H1", name: "h1", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - name: "connect"
+        label: "Connect"
+        file: "src/content/pages/connect.md"
+        fields:
+          - { label: "H1", name: "h1", widget: "string" }
+          - { label: "Contact body", name: "contact_body", widget: "text" }
+          - label: "Social links"
+            name: "socials"
+            widget: "list"
+            fields:
+              - { label: "Platform", name: "platform", widget: "string" }
+              - { label: "URL", name: "href", widget: "string" }
+
+  # ── Media gallery ──────────────────────────────────────────────
+  - name: "media"
+    label: "Media"
+    label_singular: "Media item"
+    folder: "src/content/media"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title / caption", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options:
+          - { label: "Photo", value: "photo" }
+          - { label: "Show Poster", value: "poster" }
+          - { label: "Video (embed URL)", value: "video" }
+      - { label: "Video embed URL (if type = video)", name: "video_url", widget: "string", required: false }
+      - { label: "Year (approx)", name: "year", widget: "number", required: false }
+      - { label: "Notes", name: "notes", widget: "text", required: false }
+
+  # ── Afterlives projects ────────────────────────────────────────
+  - name: "afterlives_projects"
+    label: "Afterlives Projects"
+    label_singular: "Project"
+    folder: "src/content/afterlives"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Project name", name: "title", widget: "string" }
+      - { label: "Members involved", name: "members", widget: "string" }
+      - { label: "Active years", name: "years", widget: "string" }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image", required: false }

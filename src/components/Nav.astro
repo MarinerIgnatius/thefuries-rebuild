@@ -1,0 +1,34 @@
+---
+const navLinks = [
+  { href: '/',           label: 'Entry'      },
+  { href: '/band',       label: 'Band'       },
+  { href: '/scene',      label: 'Scene'      },
+  { href: '/media',      label: 'Media'      },
+  { href: '/afterlives', label: 'Afterlives' },
+  { href: '/connect',    label: 'Connect'    },
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="container site-nav__inner">
+    <a href="/" class="site-nav__logo" aria-label="The Furies Archive — home">
+      THE FURIES 1986–1996
+    </a>
+    <ul class="site-nav__links" role="list">
+      {navLinks.map(({ href, label }) => {
+        const isActive = href === '/'
+          ? currentPath === '/'
+          : currentPath.startsWith(href);
+        return (
+          <li>
+            <a href={href} aria-current={isActive ? 'page' : undefined}>
+              {label}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</nav>
