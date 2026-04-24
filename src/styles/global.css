@@ -547,8 +547,8 @@ hr {
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: 1rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
   line-height: 1.6;
   max-width: 48ch;
 }

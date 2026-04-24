@@ -1,11 +1,8 @@
 # Cloudflare Pages redirect rules
-# Migrate from Wix URL structure if needed
-
-# Wix sometimes adds trailing slashes — normalize
-/band/     /band     301
-/scene/    /scene    301
-/media/    /media    301
-/afterlives/ /afterlives 301
-/connect/  /connect  301
+#
+# Astro is configured with build.format: 'directory', so every page
+# lives at /slug/index.html and the canonical URL has a trailing slash.
+# Cloudflare Pages handles the non-slash → slash redirect natively.
+# Do NOT add /slug/ → /slug rewrites here — they create an infinite loop.
 
 # 404 fallback (Cloudflare Pages serves 404.html automatically)
