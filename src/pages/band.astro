@@ -5,33 +5,39 @@ const title       = 'The Furies Archive: Origins, Formation, Debut, Active Years
 const description = 'The complete history of The Furies — Toronto\'s proto-goth post-punk band, 1986–1996. Origins, formation, venues, the long decline, and lasting legacy.';
 
 /**
- * Timeline entries. Body copy uses <strong> to bold the key
- * instrument / venue / listening-diet names — Wix parity.
+ * Timeline entries — Wix-verbatim copy with embedded Wikipedia / external
+ * links on bolded terms. Body is rendered via set:html so links render.
  */
 const timeline = [
   {
     heading: 'The Origins (1984–1986)',
-    body: `Before The Furies existed as a band, the sound existed as an instinct. Between 1984 and 1986, Daniel Riley worked alone — a <strong>Tascam 4-track</strong>, a <strong>Yamaha DX7</strong> cutting cold crystalline tones and metallic bass, a <strong>Roland Juno-106</strong> delivering its icy atmospheric haze. Guitars, voice and synths run through Boss phase, distortion and digital delay. Raw, atmospheric tension — a sonic skeleton waiting for a body. The listening diet was uncompromising: <strong>Gary Numan, Psychic TV, Fad Gadget, Cabaret Voltaire, Tones on Tail</strong>.`,
+    level: 'h3',
+    body: `Before The Furies existed as a band, the sound existed as an instinct. Between 1984 and 1986, Daniel Riley worked alone — a <strong><a href="https://en.wikipedia.org/wiki/Portastudio" target="_blank" rel="noreferrer noopener">Tascam 4-track</a></strong>, a <strong><a href="https://en.wikipedia.org/wiki/Yamaha_DX7" target="_blank" rel="noreferrer noopener">Yamaha DX7</a></strong> cutting cold crystalline tones and metallic bass, a <strong><a href="https://en.wikipedia.org/wiki/Roland_Juno-106" target="_blank" rel="noreferrer noopener">Roland Juno-106</a></strong> delivering its icy atmospheric haze. Guitars, voice and synths run through Boss phase, distortion and digital delay. Raw, atmospheric tension — a sonic skeleton waiting for a body. The listening diet was uncompromising: <strong><a href="https://en.wikipedia.org/wiki/Gary_Numan" target="_blank" rel="noreferrer noopener">Gary Numan</a></strong>, <strong><a href="https://en.wikipedia.org/wiki/Psychic_TV" target="_blank" rel="noreferrer noopener">Psychic TV</a></strong>, <strong><a href="https://en.wikipedia.org/wiki/Fad_Gadget" target="_blank" rel="noreferrer noopener">Fad Gadget</a></strong>, <strong><a href="https://en.wikipedia.org/wiki/Cabaret_Voltaire_(band)" target="_blank" rel="noreferrer noopener">Cabaret Voltaire</a></strong>, <strong><a href="https://en.wikipedia.org/wiki/Tones_on_Tail" target="_blank" rel="noreferrer noopener">Tones on Tail</a></strong>.`,
   },
   {
     heading: 'Formation 1986',
+    level: 'h4',
     body: `The definitive lineup coalesced in 1986 — Riley, Mark Stewart, Jeff Riley, Barnes, and soon after Steve Lafourtune. What emerged was cold, brooding, and deliberately aggressive: jagged guitar rhythms over synthetic atmospherics, a sonic signature that would soon map Toronto's gothic trajectory. The basement experiments became a live force.`,
   },
   {
     heading: 'Twilight Zone Debut 1986',
-    body: `The debut at the <strong>Twilight Zone</strong> — 185 Richmond St. W., home to one of the most advanced sound systems in the city — was a statement. The 80s club kids packed the floor in a lysergic haze, not unlike a pagan ceremony. A high-profile emergence that cemented The Furies immediately in Toronto's alternative history.`,
+    level: 'h4',
+    body: `The debut at the <strong><a href="http://thenandnowtoronto.com/2014/09/then-now-the-twilight-zone/" target="_blank" rel="noreferrer noopener">Twilight Zone</a></strong> — 185 Richmond St. W., home to one of the most advanced sound systems in the city — was a statement. The 80s club kids packed the floor in a lysergic haze, not unlike a pagan ceremony. A high-profile emergence that cemented The Furies immediately in Toronto's alternative history.`,
   },
   {
     heading: 'Active Years & Venues',
-    body: `What followed was a decade of constant presence inside <strong>Little Gotham</strong> — the city's infamous subterranean world that rivalled London and Berlin. <strong>Lee's Palace, El Mocambo, The Rivoli</strong>, the <strong>Bovine Sex Club</strong>. They haunted <strong>Sanctuary, Catch 22, Death in the Underground</strong> — the concentrated cluster of venues on Queen West that earned the street its nickname. Packed rooms, every time.`,
+    level: 'h4',
+    body: `What followed was a decade of constant presence inside <strong><a href="https://en.wikipedia.org/wiki/Toronto_goth_scene" target="_blank" rel="noreferrer noopener">Little Gotham</a></strong> — the city's infamous subterranean world that rivalled London and Berlin. <strong><a href="https://en.wikipedia.org/wiki/Lee%27s_Palace" target="_blank" rel="noreferrer noopener">Lee's Palace</a></strong>, <strong><a href="https://en.wikipedia.org/wiki/El_Mocambo" target="_blank" rel="noreferrer noopener">El Mocambo</a></strong>, <strong><a href="https://en.wikipedia.org/wiki/The_Rivoli" target="_blank" rel="noreferrer noopener">The Rivoli</a></strong>, the <strong><a href="https://en.wikipedia.org/wiki/Bovine_Sex_Club" target="_blank" rel="noreferrer noopener">Bovine Sex Club</a></strong>. They haunted <strong><a href="https://en.wikipedia.org/wiki/Toronto_goth_scene" target="_blank" rel="noreferrer noopener">Sanctuary</a></strong>, <strong><a href="https://www.torontogothevents.com/events/catch-22-reunion-party/" target="_blank" rel="noreferrer noopener">Catch 22</a></strong>, <strong><a href="https://en.wikipedia.org/wiki/Toronto_goth_scene" target="_blank" rel="noreferrer noopener">Death in the Underground</a></strong> — the concentrated cluster of venues on Queen West that earned the street its nickname. Packed rooms, every time.`,
   },
   {
     heading: 'Industry and Principle',
-    body: `Approaches came from <strong>EMI</strong> and <strong>Warner</strong>. The band declined both. In a subculture that wore independence as a badge of honour, signing to a major wasn't ambition — it was capitulation. The Furies kept the work pure.`,
+    level: 'h4',
+    body: `Approaches came from <strong><a href="https://en.wikipedia.org/wiki/EMI" target="_blank" rel="noreferrer noopener">EMI</a></strong> and <strong><a href="https://en.wikipedia.org/wiki/Warner_Music_Group" target="_blank" rel="noreferrer noopener">Warner</a></strong>. The band declined both. In a subculture that wore independence as a badge of honour, signing to a major wasn't ambition — it was capitulation. The Furies kept the work pure.`,
   },
   {
     heading: 'The Lasting Legacy',
-    body: `<strong>BlogTO</strong> named them one of the top 10 Toronto goth bands of all time — "essential to fostering the goth movement and setting the tone for style." Cited in the Wikipedia history of Toronto's alternative scene. Documented by indie press, and the early <strong>MuchMusic–CityTV</strong> cultural machine. A decade-long reign. Uncompromised throughout.`,
+    level: 'h4',
+    body: `<strong><a href="https://www.blogto.com/music/2014/10/the_top_10_toronto_goth_bands_of_all_time/" target="_blank" rel="noreferrer noopener">BlogTO named them one of the top 10 Toronto goth bands of all time</a></strong> — "essential to fostering the goth movement and setting the tone for style." Cited in the <strong><a href="https://en.wikipedia.org/wiki/Toronto_goth_scene" target="_blank" rel="noreferrer noopener">Wikipedia history of Toronto's alternative scene</a></strong>. Documented by indie press, and the early <strong><a href="https://en.wikipedia.org/wiki/Much_(TV_channel)" target="_blank" rel="noreferrer noopener">MuchMusic</a>–<a href="https://en.wikipedia.org/wiki/Citytv" target="_blank" rel="noreferrer noopener">CityTV</a></strong> cultural machine. A decade-long reign. Uncompromised throughout.`,
   },
 ];
 ---
@@ -42,114 +48,90 @@ const timeline = [
   ogImage="/images/the-furies-Toronto-proto-goth-underground_80s.jpg"
 >
 
-  <!-- ─── Hero: magazine-split over full-bleed band photo ────────── -->
+  <!-- ─── Hero: flat dark, eyebrow + display LEFT + body RIGHT ─ -->
   <section class="band-hero" aria-labelledby="band-hero-heading">
-    <img
-      class="band-hero__bg"
-      src="/images/the-furies-Toronto-proto-goth-underground_80s.jpg"
-      alt="The Furies performing live — Toronto, 1980s archive photograph"
-      loading="eager"
-      fetchpriority="high"
-      decoding="async"
-    />
-    <div class="band-hero__overlay" aria-hidden="true"></div>
-
-    <div class="container band-hero__eyebrow-wrap">
-      <h1 class="band-hero__eyebrow" id="band-hero-heading">
-        <strong>Band:</strong> The Furies — origins, formation, debut, active years and legacy
-      </h1>
-    </div>
-
     <div class="container band-hero__grid">
-      <h2 class="band-hero__display">
-        Toronto post-punk / proto-goth, 1986–1996.<br />
-        <span class="accent">The defining years.</span>
-      </h2>
-      <div class="band-hero__lede">
-        <p>
+      <h1 class="band-hero__eyebrow" id="band-hero-heading">
+        <strong>Band:</strong> The Furies — Origins, Formation, Debut, Active Years and Legacy
+      </h1>
+
+      <div class="band-hero__left">
+        <h2 class="band-hero__display">
+          Toronto post-punk / proto-goth, 1986–1996.<br />
+          <span class="accent">The defining years.</span>
+        </h2>
+      </div>
+
+      <div class="band-hero__right">
+        <p class="band-hero__lede">
           The Furies emerged in Toronto in 1986, less as a debut than as a convergence with the city's darkening pulse. Post-punk tension, nocturnal glamour, and underground appetite were beginning to lock into a new shape, and The Furies arrived exactly at that hour.
         </p>
-        <p style="margin-top: 1.25rem;">
-          What followed was the band's defining decade: 1986 to 1996, when the sound cut deeper, the image grew sharper, and the live presence took on its own dangerous silhouette. This was the era of the foundational strike — where sound, shadow, and live volatility were engineered into a permanent legacy.
+        <p class="band-hero__lede">
+          What followed was the band's defining decade: 1986 to 1996, when the sound cut deeper, the image grew sharper, and the live presence took on its own dangerous silhouette. This was the era of the foundational strike—where sound, shadow, and live volatility were engineered into a permanent legacy.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ─── NOW Magazine pull-quote (centered, raised surface) ───── -->
-  <section class="section section--raised" aria-labelledby="now-heading">
-    <div class="container pull-quote pull-quote--centered reveal">
-      <p class="pull-quote__text" id="now-heading">
+  <!-- ─── NOW Magazine pull-quote ──────────────────────────────── -->
+  <section class="band-quote" aria-labelledby="now-heading">
+    <div class="container band-quote__inner">
+      <h3 class="band-quote__text" id="now-heading">
         "They started very late for a Wednesday night… They were told never to return: The bassist slugged the soundman."
-      </p>
-      <cite class="pull-quote__attribution">NOW Magazine — Blue Smith</cite>
+      </h3>
+      <p class="band-quote__attr">NOW Magazine — Blue Smith</p>
     </div>
   </section>
 
-  <!-- ─── Timeline header + list ──────────────────────────────── -->
-  <section class="section" aria-labelledby="decline-heading">
-    <div class="container">
-      <h2 id="decline-heading" class="display display--centered reveal">
-        The long decline:<br />
-        A history <span class="accent">1986–1996</span>
+  <!-- ─── Long decline / timeline ─────────────────────────────── -->
+  <section class="decline" aria-labelledby="decline-heading">
+    <div class="container decline__inner">
+      <h2 id="decline-heading" class="decline__display">
+        THE LONG DECLINE:<br />
+        A HISTORY <span class="accent">1986–1996</span>
       </h2>
-      <hr class="display-rule reveal" />
 
-      <div class="timeline reveal">
-        {timeline.map(({ heading, body }) => (
-          <article class="timeline__item">
-            <h3 class="timeline__heading">{heading}</h3>
-            <p class="timeline__body" set:html={body}></p>
+      <div class="decline__timeline">
+        {timeline.map(({ heading, level, body }) => (
+          <article class="decline__item">
+            {level === 'h3' ? (
+              <h3 class="decline__heading">{heading}</h3>
+            ) : (
+              <h4 class="decline__heading">{heading}</h4>
+            )}
+            <p class="decline__body" set:html={body}></p>
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ─── Continue CTAs ───────────────────────────────────────── -->
-  <section class="section" aria-label="Continue">
-    <div class="container band-continue">
-      <a href="/scene"      class="btn btn--accent">The Scene</a>
-      <a href="/media"      class="btn btn--accent">Archive Media</a>
-      <a href="/afterlives" class="btn btn--accent">Afterlives</a>
-    </div>
-  </section>
-
 </BaseLayout>
 
 <style>
-  /* ─── Band hero (full-bleed photo + magazine split over it) ── */
+  /* ─── Hero (flat dark, no bg image) ────────────────────────── */
   .band-hero {
-    position: relative;
-    isolation: isolate;
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    overflow: hidden;
+    background: var(--color-bg);
     padding-block: clamp(5rem, 12vh, 9rem);
+    min-height: clamp(36rem, 88svh, 60rem);
+    display: flex;
+    align-items: center;
   }
 
-  .band-hero__bg {
-    position: absolute;
-    inset: 0;
-    z-index: -2;
+  .band-hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "eyebrow eyebrow"
+      "left    right";
+    column-gap: clamp(3rem, 6vw, 6rem);
+    row-gap: clamp(2rem, 5vh, 4rem);
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    align-items: start;
   }
-
-  .band-hero__overlay {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background:
-      linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.75) 100%);
-  }
-
-  .band-hero__eyebrow-wrap { margin-bottom: clamp(2rem, 5vh, 4rem); }
 
   .band-hero__eyebrow {
+    grid-area: eyebrow;
     font-family: var(--font-eyebrow);
     font-size: var(--size-eyebrow);
     font-weight: 400;
@@ -157,7 +139,8 @@ const timeline = [
     line-height: 1.45;
     text-transform: uppercase;
     color: var(--color-text-muted);
-    max-width: 32ch;
+    margin: 0;
+    max-width: 60ch;
   }
 
   .band-hero__eyebrow strong {
@@ -165,102 +148,142 @@ const timeline = [
     font-weight: 500;
   }
 
-  .band-hero__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(2rem, 6vw, 5rem);
-    align-items: start;
-  }
+  .band-hero__left  { grid-area: left;  }
+  .band-hero__right { grid-area: right; }
 
   .band-hero__display {
     font-family: var(--font-display);
-    font-size: var(--size-display);
-    line-height: 0.95;
+    font-size: clamp(2.4rem, 5.5vw, 6.6rem);
+    line-height: 1.0;
     letter-spacing: normal;
     text-transform: none;
     color: var(--color-text);
-    max-width: 12ch;
+    max-width: 14ch;
+    margin: 0;
   }
 
   .band-hero__display .accent { color: var(--color-accent); }
 
-  .band-hero__lede p {
+  .band-hero__lede {
     font-family: var(--font-body);
     font-weight: var(--weight-body);
     font-size: var(--size-body-lg);
-    line-height: 1.45;
-    color: var(--color-text-muted);
-    max-width: 38ch;
-  }
-
-  @media (max-width: 900px) {
-    .band-hero__grid { grid-template-columns: 1fr; }
-    .band-hero__display { max-width: none; }
-  }
-
-  /* ─── Pull-quote centered variant ─── */
-  .pull-quote--centered { text-align: center; }
-  .pull-quote--centered .pull-quote__text { max-width: none; margin-inline: auto; }
-  .pull-quote--centered .pull-quote__attribution {
-    text-align: center;
-  }
-
-  /* ─── Centered display with rule underneath ─── */
-  .display--centered {
-    text-align: center;
-    max-width: none;
-    margin-inline: auto;
-  }
-
-  .display-rule {
-    border-top: 1px solid var(--color-text-subtle);
-    max-width: 80%;
-    margin: 2.5rem auto clamp(3rem, 7vw, 5rem);
-  }
-
-  /* ─── Timeline list ─── */
-  .timeline {
-    max-width: 72rem;
-    margin-inline: auto;
-  }
-
-  .timeline__item {
-    padding-block: clamp(2.5rem, 5vw, 4rem);
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .timeline__item:last-child { border-bottom: none; }
-
-  .timeline__heading {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    line-height: 1.05;
-    letter-spacing: normal;
-    text-transform: none;
+    line-height: 1.5;
     color: var(--color-text);
-    margin-bottom: 1.5rem;
+    max-width: 44ch;
+    margin: 0 0 1.5rem;
   }
 
-  .timeline__body {
+  .band-hero__lede:last-child { margin-bottom: 0; }
+
+  /* ─── NOW Magazine pull-quote (centered, smaller display) ──── */
+  .band-quote {
+    background: var(--color-bg);
+    padding-block: clamp(6rem, 14vh, 10rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(28rem, 65svh, 44rem);
+  }
+
+  .band-quote__inner { text-align: center; }
+
+  .band-quote__text {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.2vw, 4.6rem);
+    line-height: 1.1;
+    color: var(--color-text);
+    max-width: 24ch;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .band-quote__attr {
+    margin-top: clamp(2rem, 5vh, 4rem);
+    font-family: var(--font-eyebrow);
+    font-size: var(--size-eyebrow);
+    letter-spacing: var(--ls-eyebrow);
+    line-height: 1.45;
+    text-transform: uppercase;
+    color: var(--color-text);
+    text-align: center;
+  }
+
+  /* ─── The long decline / timeline ──────────────────────────── */
+  .decline {
+    background: var(--color-bg);
+    padding-block: clamp(5rem, 12vh, 9rem);
+  }
+
+  .decline__inner {
+    max-width: 80rem;
+    margin-inline: auto;
+  }
+
+  .decline__display {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5.5vw, 6.6rem);
+    line-height: 1.0;
+    color: var(--color-text);
+    text-align: left;
+    margin: 0 0 clamp(3rem, 7vw, 5rem);
+  }
+
+  .decline__display .accent { color: var(--color-accent); }
+
+  .decline__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .decline__heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 2.8vw, 2.9rem);
+    line-height: 1.1;
+    color: var(--color-text);
+    margin: 0 0 1rem;
+    text-align: left;
+  }
+
+  .decline__body {
     font-family: var(--font-body);
     font-weight: var(--weight-body);
-    font-size: var(--size-body-lg);
+    font-size: var(--size-body);
     line-height: 1.55;
     letter-spacing: 0;
-    color: var(--color-text-muted);
-    max-width: 66ch;
-  }
-
-  .timeline__body strong {
     color: var(--color-text);
-    font-weight: 400;
+    max-width: 72ch;
+    margin: 0;
+    text-align: left;
   }
 
-  /* ─── Continue CTAs ─── */
-  .band-continue {
-    display: flex;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  .decline__body strong {
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .decline__body a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .decline__body a:hover {
+    color: var(--color-accent);
+  }
+
+  /* ─── Responsive ───────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .band-hero__grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "eyebrow"
+        "left"
+        "right";
+    }
+
+    .band-hero__display { max-width: none; }
   }
 </style>
