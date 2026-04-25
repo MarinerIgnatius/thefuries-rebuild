@@ -284,13 +284,32 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     opacity: 1;
   }
 
+  /* 30% black overlay on every section bg image — hero stays clean */
+  .teaser::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.30);
+    pointer-events: none;
+  }
+
+  /* Afterlives: mirror flip the keyboardist photo per Wix */
+  .teaser--afterlives .teaser__bg { transform: scaleX(-1); }
+
+  /* Push body content edge-to-edge — override .container max-width inside teasers */
+  .teaser > .container {
+    max-width: none;
+    padding-inline: clamp(1.25rem, 5vw, 4rem);
+  }
+
   .teaser__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "eyebrow eyebrow"
       "left    right";
-    column-gap: clamp(3rem, 7vw, 7rem);
+    column-gap: clamp(3rem, 7vw, 9rem);
     row-gap: clamp(2rem, 4vh, 3rem);
     width: 100%;
     padding-block: clamp(4rem, 9vh, 7rem);
@@ -318,8 +337,22 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     font-weight: 500;
   }
 
-  .teaser__left  { grid-area: left;  }
-  .teaser__right { grid-area: right; }
+  .teaser__left  {
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;       /* display copy hugs left page edge */
+  }
+  .teaser__right {
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;         /* body+cta hug right page edge */
+  }
+  /* When body sits in the LEFT column right-aligned (Scene/Afterlives/Merch) */
+  .teaser__left--end  { align-items: flex-end; }
+  /* When display sits in the RIGHT column right-aligned (Scene/Afterlives/Merch) */
+  .teaser__right--end { align-items: flex-end; }
 
   .teaser__display {
     font-family: var(--font-display);
@@ -340,8 +373,8 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     font-size: var(--size-body-lg);
     line-height: 1.5;
     color: var(--color-text-muted);
-    max-width: 42ch;
-    margin: 0;
+    max-width: 48ch;
+    margin: 0 0 0 auto;          /* push body block to right edge of its column */
   }
 
   .teaser__body--end {
@@ -378,6 +411,12 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
       text-align: left;
       margin-left: 0;
     }
+
+    /* Reset flex alignment on mobile so single-column rows hug the left */
+    .teaser__left,
+    .teaser__right,
+    .teaser__left--end,
+    .teaser__right--end { align-items: flex-start; }
 
     .teaser__bg { opacity: 0.5; }
   }

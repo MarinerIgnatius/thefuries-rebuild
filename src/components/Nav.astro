@@ -1,11 +1,12 @@
 ---
 const navLinks = [
-  { href: '/',           label: 'Entry'      },
-  { href: '/band',       label: 'Band'       },
-  { href: '/scene',      label: 'Scene'      },
-  { href: '/media',      label: 'Media'      },
-  { href: '/afterlives', label: 'Afterlives' },
-  { href: '/connect',    label: 'Connect'    },
+  { href: '/',           label: 'Entry'       },
+  { href: '/band',       label: 'Band'        },
+  { href: '/scene',      label: 'Scene'       },
+  { href: '/media',      label: 'Media'       },
+  { href: '/afterlives', label: 'Afterlives'  },
+  { href: '/connect',    label: 'Connect'     },
+  { href: 'https://thefuries1986-shop.fourthwall.com', label: 'Merch/Store', external: true },
 ];
 
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -16,22 +17,25 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     <a href="/" class="site-nav__logo" aria-label="The Furies Archive — home">
       <img
         src="/images/logo.png"
-        alt=""
+        alt="The Furies"
         width="40"
         height="40"
         loading="eager"
         decoding="async"
       />
-      <span>The Furies 1986–1996</span>
     </a>
     <ul class="site-nav__links" role="list">
-      {navLinks.map(({ href, label }) => {
-        const isActive = href === '/'
+      {navLinks.map(({ href, label, external }) => {
+        const isActive = !external && (href === '/'
           ? currentPath === '/'
-          : currentPath.startsWith(href);
+          : currentPath.startsWith(href));
         return (
           <li>
-            <a href={href} aria-current={isActive ? 'page' : undefined}>
+            <a
+              href={href}
+              aria-current={isActive ? 'page' : undefined}
+              {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            >
               {label}
             </a>
           </li>
