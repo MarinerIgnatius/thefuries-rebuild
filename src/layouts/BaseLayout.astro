@@ -7,15 +7,22 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  /**
+   * If true, nav starts transparent and overlays the hero photo.
+   * Used on home (and any other page with a full-bleed hero image).
+   */
+  transparentNav?: boolean;
 }
 
 const {
   title,
   description = 'The definitive archive of The Furies – Toronto\'s proto-gothic post-punk institution. Photos, history, interviews, and the full story of a scene that came before the name existed.',
   ogImage = '/images/the-furies-Toronto-proto-goth-underground_80s.jpg',
+  transparentNav = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const bodyClass = transparentNav ? 'has-transparent-nav' : '';
 ---
 
 <!doctype html>
@@ -51,7 +58,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       href="https://fonts.googleapis.com/css2?family=Gloock&family=Azeret+Mono:wght@400;500&family=Sono:wght@200;300;400&family=Pirata+One&display=swap"
     />
   </head>
-  <body>
+  <body class={bodyClass}>
     <a href="#main-content" class="sr-only">Skip to main content</a>
     <Nav />
     <main id="main-content">
@@ -73,6 +80,42 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         { rootMargin: '0px 0px -10% 0px', threshold: 0.08 }
       );
       document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    </script>
+
+    <!-- Nav scroll behavior: fade backdrop after hero, hide on scroll-down, show on scroll-up -->
+    <script>
+      (() => {
+        const nav = document.querySelector('.site-nav');
+        if (!nav) return;
+        const isHome = document.body.classList.contains('has-transparent-nav');
+        const SCROLL_TINT_THRESHOLD = isHome ? 80 : 0; // home stays transparent until user scrolls
+        const HIDE_THRESHOLD = 120;                    // start hide-logic after this many px
+        let lastY = window.scrollY;
+        let ticking = false;
+
+        const update = () => {
+          const y = window.scrollY;
+          const goingDown = y > lastY;
+          // Tint backdrop
+          if (y > SCROLL_TINT_THRESHOLD) nav.classList.add('is-scrolled');
+          else nav.classList.remove('is-scrolled');
+          // Hide / show
+          if (y > HIDE_THRESHOLD && goingDown && Math.abs(y - lastY) > 4) {
+            nav.classList.add('is-hidden');
+          } else if (!goingDown) {
+            nav.classList.remove('is-hidden');
+          }
+          lastY = y;
+          ticking = false;
+        };
+
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            window.requestAnimationFrame(update);
+            ticking = true;
+          }
+        }, { passive: true });
+      })();
     </script>
   </body>
 </html>

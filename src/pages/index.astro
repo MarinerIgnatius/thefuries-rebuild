@@ -13,6 +13,7 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
   title={title}
   description={description}
   ogImage="/images/the-furies-Toronto-proto-goth-underground_80s.jpg"
+  transparentNav={true}
 >
 
   <!-- ─── Hero: full-bleed photo, eyebrow only ─────────────────── -->
@@ -70,8 +71,15 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     </div>
   </section>
 
-  <!-- ─── Scene teaser: text-only, body LEFT right-aligned, display RIGHT right-aligned -->
+  <!-- ─── Scene teaser: full-bleed bg + body LEFT right-aligned, display RIGHT right-aligned -->
   <section class="teaser teaser--scene" aria-labelledby="scene-heading">
+    <img
+      class="teaser__bg"
+      src="/images/the-furies-Toronto-proto-goth-underground_Jeff_Riley.jpg"
+      alt="Jeff Riley — The Furies, Toronto proto-goth underground"
+      loading="lazy"
+      decoding="async"
+    />
     <div class="container teaser__grid">
       <p class="teaser__eyebrow"><strong>Scene:</strong> Little Gotham</p>
 
@@ -90,8 +98,15 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     </div>
   </section>
 
-  <!-- ─── Media teaser: text-only, display LEFT, body RIGHT ──── -->
+  <!-- ─── Media teaser: full-bleed bg + display LEFT, body RIGHT ──── -->
   <section class="teaser teaser--media" aria-labelledby="media-heading">
+    <img
+      class="teaser__bg"
+      src="/images/the-furies-Toronto-proto-goth-underground_Mark_Stewart.jpg"
+      alt="Mark Stewart — The Furies, Toronto proto-goth underground"
+      loading="lazy"
+      decoding="async"
+    />
     <div class="container teaser__grid">
       <p class="teaser__eyebrow"><strong>Media:</strong> Images — Show Posters — Video</p>
 
@@ -109,8 +124,15 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     </div>
   </section>
 
-  <!-- ─── Afterlives teaser: text-only, body LEFT right-aligned, display RIGHT right-aligned -->
+  <!-- ─── Afterlives teaser: full-bleed bg + body LEFT right-aligned, display RIGHT right-aligned -->
   <section class="teaser teaser--afterlives" aria-labelledby="afterlives-heading">
+    <img
+      class="teaser__bg"
+      src="/images/the-furies-Toronto-proto-goth-underground_Steve_Lafourtune.jpg"
+      alt="Steve Lafourtune — The Furies, Toronto proto-goth underground"
+      loading="lazy"
+      decoding="async"
+    />
     <div class="container teaser__grid">
       <p class="teaser__eyebrow"><strong>Scene:</strong> Afterlives</p>
 
@@ -130,8 +152,15 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     </div>
   </section>
 
-  <!-- ─── Merch: text-only, body LEFT right-aligned, display RIGHT right-aligned -->
+  <!-- ─── Merch: full-bleed bg + body LEFT right-aligned, display RIGHT right-aligned -->
   <section class="teaser teaser--merch" aria-label="Support the archive">
+    <img
+      class="teaser__bg"
+      src="/images/merch.jpg"
+      alt="The Furies merch — archive restoration support"
+      loading="lazy"
+      decoding="async"
+    />
     <div class="container teaser__grid teaser__grid--no-eyebrow">
       <div class="teaser__left teaser__left--end">
         <p class="teaser__body teaser__body--end">
@@ -177,7 +206,7 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.9;
+    opacity: 1;
   }
 
   .hero__eyebrow {
@@ -249,7 +278,7 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.55;
+    opacity: 1;
   }
 
   .teaser__grid {
@@ -347,6 +376,6 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
       margin-left: 0;
     }
 
-    .teaser__bg { opacity: 0.4; }
+    .teaser__bg { opacity: 0.5; }
   }
 </style>

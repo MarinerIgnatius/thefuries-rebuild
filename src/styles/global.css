@@ -213,13 +213,36 @@ hr {
 
 /* ── Nav ───────────────────────────────────────────────────────── */
 .site-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.88);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.35s ease, backdrop-filter 0.35s ease, transform 0.35s ease;
+  will-change: transform, background;
+}
+
+/* Scrolled past hero — fade in tinted backdrop */
+.site-nav.is-scrolled {
+  background: rgba(0, 0, 0, 0.78);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid transparent;
+}
+
+/* Scrolling DOWN past threshold — slide nav up out of view */
+.site-nav.is-hidden {
+  transform: translateY(-100%);
+}
+
+/* Non-home pages start scrolled (no hero photo to overlay) */
+body:not(.has-transparent-nav) .site-nav { background: rgba(0, 0, 0, 0.78); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+
+/* Push content below fixed nav on non-home pages (home hero absorbs the overlap) */
+body:not(.has-transparent-nav) main { padding-top: 5.5rem; }
+@media (max-width: 768px) {
+  body:not(.has-transparent-nav) main { padding-top: 4.5rem; }
 }
 
 .site-nav__inner {
@@ -285,9 +308,9 @@ hr {
   .site-nav__logo img { width: 32px; height: 32px; }
 }
 
-/* ── Footer (Wix spec: solid crimson bg, centered blackletter mark) ─ */
+/* ── Footer (red accent bg per design system) ─ */
 .site-footer {
-  background: #AA0000;
+  background: var(--color-accent);
   color: #000000;
   padding-block: clamp(3.5rem, 7vw, 6rem);
   border-top: 1px solid #000000;
