@@ -245,6 +245,12 @@ body:not(.has-transparent-nav) main { padding-top: 5.5rem; }
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
 }
 
+/* Nav spans full viewport width — icon flush-left, links flush-right at edges */
+.site-nav .container {
+  max-width: none;
+  padding-inline: clamp(1.25rem, 5vw, 4rem);
+}
+
 .site-nav__inner {
   display: flex;
   align-items: center;
@@ -335,15 +341,6 @@ body:not(.has-transparent-nav) main { padding-top: 5.5rem; }
   opacity: 1;
 }
 
-/* "1986–1996" sits directly under the blackletter logo, per Wix */
-.site-footer__tagline {
-  margin-top: -0.5rem;            /* tighten to logo */
-  font-family: var(--font-display);
-  font-size: clamp(1rem, 1.2vw, 1.25rem);
-  letter-spacing: 0.06em;
-  color: #FFFFFF;
-  line-height: 1;
-}
 
 .site-footer__copy {
   font-family: var(--font-body);
