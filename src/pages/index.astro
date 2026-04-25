@@ -197,12 +197,20 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
   .hero {
     position: relative;
     isolation: isolate;
-    min-height: clamp(36rem, 100svh, 68rem);
+    /* v7: +35% height (was 36 / 100 / 68) */
+    min-height: clamp(48.6rem, 135svh, 91.8rem);
     display: flex;
     align-items: flex-start;
     overflow: hidden;
     background: var(--color-bg);
-    padding-top: clamp(5rem, 9vh, 7rem); /* tucks eyebrow closer to nav, per Wix */
+  }
+
+  /* Hero container uses --page-gutter so eyebrow lines up with section eyebrows */
+  .hero > .container {
+    max-width: none;
+    padding-inline: var(--page-gutter);
+    position: relative;
+    width: 100%;
   }
 
   .hero__bg {
@@ -215,9 +223,16 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     opacity: 1;
   }
 
+  /* v7: Hero eyebrow pinned 100px from top, 11pt — matches teaser eyebrows */
   .hero__eyebrow {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    padding-inline: var(--page-gutter);
+    margin: 0;
     font-family: var(--font-eyebrow);
-    font-size: var(--size-eyebrow);
+    font-size: 11pt;
     font-weight: 400;
     letter-spacing: var(--ls-eyebrow);
     line-height: 1.45;
@@ -275,11 +290,11 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     isolation: isolate;
     background: var(--color-bg);
     overflow: hidden;
-    /* Larger sections with vertical breathing room above + below content */
-    min-height: clamp(48rem, 110svh, 72rem);
+    /* v7: +35% height vs v6 (was 48rem / 110svh / 72rem) */
+    min-height: clamp(64.8rem, 148svh, 97.2rem);
     display: flex;
     align-items: center;
-    padding-block: clamp(4rem, 9vh, 8rem);
+    padding-block: clamp(5.4rem, 12vh, 10.8rem);
   }
 
   .teaser__bg {
@@ -305,16 +320,16 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
   /* Afterlives: mirror flip the keyboardist photo per Wix */
   .teaser--afterlives .teaser__bg { transform: scaleX(-1); }
 
-  /* Eyebrow: absolute top-left of section, well above the centered content */
+  /* Eyebrow: pinned 100px from top of section, small (11pt) per design directive */
   .teaser__eyebrow {
     position: absolute;
-    top: clamp(2.25rem, 6vh, 4.5rem);
+    top: 100px;
     left: 0;
     right: 0;
-    padding-inline: clamp(1.25rem, 5vw, 4rem);
+    padding-inline: var(--page-gutter);
     z-index: 2;
     font-family: var(--font-eyebrow);
-    font-size: var(--size-eyebrow);
+    font-size: 11pt;             /* explicit point size per design directive */
     font-weight: 400;
     letter-spacing: var(--ls-eyebrow);
     line-height: 1.45;
@@ -328,10 +343,12 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     font-weight: 500;
   }
 
-  /* Push grid content edge-to-edge — override .container max-width inside teasers */
+  /* Push grid content edge-to-edge — override .container max-width inside teasers
+     Uses --page-gutter (shared with .site-nav) so body content lines up under
+     the nav icon on the left and under the link strip on the right. */
   .teaser > .container {
     max-width: none;
-    padding-inline: clamp(1.25rem, 5vw, 4rem);
+    padding-inline: var(--page-gutter);
   }
 
   .teaser__grid {
@@ -387,7 +404,8 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
   /* ─── Responsive collapse ───────────────────────────────────── */
   @media (max-width: 900px) {
     .teaser {
-      min-height: clamp(40rem, 90svh, 60rem);
+      /* +35% mobile height (was 40 / 90 / 60) */
+      min-height: clamp(54rem, 121svh, 81rem);
     }
     .teaser__grid {
       grid-template-columns: 1fr;
