@@ -218,31 +218,31 @@ hr {
   left: 0;
   right: 0;
   z-index: 100;
-  background: transparent;
+  background: transparent !important;     /* never tinted — design directive */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   border-bottom: 1px solid transparent;
-  transition: background 0.35s ease, backdrop-filter 0.35s ease, transform 0.35s ease;
-  will-change: transform, background;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  will-change: transform, opacity;
 }
 
-/* Scrolled past hero — fade in tinted backdrop */
-.site-nav.is-scrolled {
-  background: rgba(0, 0, 0, 0.78);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-/* Scrolling DOWN past threshold — slide nav up out of view */
+/* Dynamic fade in/out on scroll-direction change — translate up & fade when scrolling down */
 .site-nav.is-hidden {
   transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
-
-/* Non-home pages start scrolled (no hero photo to overlay) */
-body:not(.has-transparent-nav) .site-nav { background: rgba(0, 0, 0, 0.78); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
 
 /* Push content below fixed nav on non-home pages (home hero absorbs the overlap) */
 body:not(.has-transparent-nav) main { padding-top: 5.5rem; }
 @media (max-width: 768px) {
   body:not(.has-transparent-nav) main { padding-top: 4.5rem; }
+}
+
+/* Subtle text-shadow on nav links so they remain readable when overlaying any photo */
+.site-nav__logo,
+.site-nav__links a {
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
 }
 
 .site-nav__inner {
@@ -308,12 +308,12 @@ body:not(.has-transparent-nav) main { padding-top: 5.5rem; }
   .site-nav__logo img { width: 32px; height: 32px; }
 }
 
-/* ── Footer (red accent bg per design system) ─ */
+/* ── Footer (red accent bg, white content) ─ */
 .site-footer {
   background: var(--color-accent);
-  color: #000000;
+  color: #FFFFFF;
   padding-block: clamp(3.5rem, 7vw, 6rem);
-  border-top: 1px solid #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .site-footer__inner {
@@ -331,7 +331,7 @@ body:not(.has-transparent-nav) main { padding-top: 5.5rem; }
 .site-footer__brand img {
   max-width: 220px;
   height: auto;
-  filter: brightness(0) invert(0); /* render blackletter in black on red */
+  filter: brightness(0) invert(1); /* render blackletter in white on red */
   opacity: 1;
 }
 
@@ -340,7 +340,7 @@ body:not(.has-transparent-nav) main { padding-top: 5.5rem; }
   font-weight: 300;
   font-size: 0.8125rem;
   letter-spacing: 0.18em;
-  color: #000000;
+  color: #FFFFFF;
   text-transform: uppercase;
   max-width: 60ch;
   line-height: 1.7;
@@ -359,10 +359,12 @@ body:not(.has-transparent-nav) main { padding-top: 5.5rem; }
   font-size: 0.8125rem;
   letter-spacing: var(--ls-nav);
   text-transform: uppercase;
-  color: #000000;
+  color: #FFFFFF;
+  opacity: 0.92;
+  transition: opacity 0.2s ease;
 }
 
-.site-footer__links a:hover { color: #FFFFFF; }
+.site-footer__links a:hover { opacity: 1; }
 
 .site-footer__socials {
   display: flex;
@@ -372,16 +374,17 @@ body:not(.has-transparent-nav) main { padding-top: 5.5rem; }
 }
 
 .site-footer__socials a {
-  color: #000000;
+  color: #FFFFFF;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 36px;
   height: 36px;
-  transition: color 0.2s ease;
+  transition: opacity 0.2s ease;
+  opacity: 0.92;
 }
 
-.site-footer__socials a:hover { color: #FFFFFF; }
+.site-footer__socials a:hover { opacity: 1; }
 .site-footer__socials svg { width: 22px; height: 22px; fill: currentColor; }
 
 /* ── Hero (full-bleed cinematic) ──────────────────────────────── */

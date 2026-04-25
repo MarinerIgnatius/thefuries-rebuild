@@ -108,7 +108,7 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
       decoding="async"
     />
     <div class="container teaser__grid">
-      <p class="teaser__eyebrow"><strong>Media:</strong> Images — Show Posters — Video</p>
+      <p class="teaser__eyebrow"><strong>Media:</strong> Images - Show Posters - Video</p>
 
       <div class="teaser__left">
         <h2 id="media-heading" class="teaser__display">
@@ -196,7 +196,7 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     align-items: flex-start;
     overflow: hidden;
     background: var(--color-bg);
-    padding-top: clamp(6rem, 14vh, 10rem);
+    padding-top: clamp(5rem, 9vh, 7rem); /* tucks eyebrow closer to nav, per Wix */
   }
 
   .hero__bg {
@@ -217,7 +217,10 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
     line-height: 1.45;
     text-transform: uppercase;
     color: var(--color-text-muted);
-    max-width: 32ch;
+    white-space: nowrap;             /* keep "ENTRY: TORONTO PROTO-GOTH" on one line */
+  }
+  @media (max-width: 480px) {
+    .hero__eyebrow { white-space: normal; }
   }
 
   .hero__eyebrow strong {
@@ -227,7 +230,7 @@ const sceneMediaBody = `The Furies didn't appear in isolation. They were a bypro
 
   /* ─── BlogTO centered quote section ─────────────────────────── */
   .quote-section {
-    background: var(--color-bg);
+    background: #1a1a1a;                /* dark grey per Wix (not pure black) */
     padding-block: clamp(7rem, 18vh, 14rem);
     display: flex;
     align-items: center;

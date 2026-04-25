@@ -82,24 +82,18 @@ const bodyClass = transparentNav ? 'has-transparent-nav' : '';
       document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     </script>
 
-    <!-- Nav scroll behavior: fade backdrop after hero, hide on scroll-down, show on scroll-up -->
+    <!-- Nav scroll behavior: hide on scroll-down past threshold, reappear on scroll-up. Nav stays transparent always. -->
     <script>
       (() => {
         const nav = document.querySelector('.site-nav');
         if (!nav) return;
-        const isHome = document.body.classList.contains('has-transparent-nav');
-        const SCROLL_TINT_THRESHOLD = isHome ? 80 : 0; // home stays transparent until user scrolls
-        const HIDE_THRESHOLD = 120;                    // start hide-logic after this many px
+        const HIDE_THRESHOLD = 120;
         let lastY = window.scrollY;
         let ticking = false;
 
         const update = () => {
           const y = window.scrollY;
           const goingDown = y > lastY;
-          // Tint backdrop
-          if (y > SCROLL_TINT_THRESHOLD) nav.classList.add('is-scrolled');
-          else nav.classList.remove('is-scrolled');
-          // Hide / show
           if (y > HIDE_THRESHOLD && goingDown && Math.abs(y - lastY) > 4) {
             nav.classList.add('is-hidden');
           } else if (!goingDown) {
