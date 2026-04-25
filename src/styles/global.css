@@ -329,10 +329,20 @@ body:not(.has-transparent-nav) main { padding-top: 5.5rem; }
 }
 
 .site-footer__brand img {
-  max-width: 220px;
+  max-width: clamp(220px, 28vw, 340px);
   height: auto;
   filter: brightness(0) invert(1); /* render blackletter in white on red */
   opacity: 1;
+}
+
+/* "1986–1996" sits directly under the blackletter logo, per Wix */
+.site-footer__tagline {
+  margin-top: -0.5rem;            /* tighten to logo */
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  line-height: 1;
 }
 
 .site-footer__copy {
@@ -342,29 +352,9 @@ body:not(.has-transparent-nav) main { padding-top: 5.5rem; }
   letter-spacing: 0.18em;
   color: #FFFFFF;
   text-transform: uppercase;
-  max-width: 60ch;
+  max-width: 80ch;
   line-height: 1.7;
 }
-
-.site-footer__links {
-  display: flex;
-  gap: 1.75rem;
-  list-style: none;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.site-footer__links a {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  letter-spacing: var(--ls-nav);
-  text-transform: uppercase;
-  color: #FFFFFF;
-  opacity: 0.92;
-  transition: opacity 0.2s ease;
-}
-
-.site-footer__links a:hover { opacity: 1; }
 
 .site-footer__socials {
   display: flex;
